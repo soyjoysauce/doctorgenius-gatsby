@@ -1,0 +1,196 @@
+@import "../styles/_site-variables.scss";
+
+.requestDemoFooterStyling {
+  .contentBlock {
+    padding-top: 15px;
+    padding-bottom: 45px;
+    h2 {
+      font-weight: $font-weight-light;
+      font-size: 46px;
+      line-height: 1;
+      margin-bottom: 28.5px;
+      span {
+        font-weight: $font-weight-semibold;
+      }
+      @include media("<=laptop") {
+        font-size: 26px;
+      }
+      @include media("<tablet") {
+        margin-bottom: $m1 / 1.5;
+      }
+    }
+
+    .fontWeightSemiBold {
+      font-weight: $font-weight-semibold;
+    }
+
+    .accentedParagraph {
+      margin-left: 15px;
+      p:before {
+        background-color: $primary;
+      }
+      p {
+        @include accented-paragraph-font;
+        font-size: 14px;
+        color: $demo-body-text;
+        &:first-of-type {
+          position: relative;
+          &:before {
+            width: 3px;
+            margin-left: -15px;
+            margin-top: 0.25rem;
+            line-height: 1rem;
+            height: 3rem;
+            content: "";
+            display: inline-block;
+            position: absolute;
+          }
+        }
+      }
+      .sThin {
+        width: 75%;
+        @media (max-width: 1299px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .ctaButton {
+    text-decoration: none;
+    background: $demo-button-green;
+    color: white;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    padding: 0.75rem 1rem;
+    @include fluid-type(18px, 15px, $phone, $laptop);
+    @include media("<=tablet") {
+      font-size: 0.9375rem;
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 60px;
+      width: 75%;
+      max-width: 300px;
+      text-align: center;
+    }
+    @include media("<=425px") {
+      margin-top: 0;
+    }
+  }
+
+  .ctaButton:hover {
+    background-color: $button-hover-green;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .thinArrowRight {
+    vertical-align: middle;
+    border-style: none;
+  }
+}
+
+.requestDemoFooterStylingEvents {
+  .contentBlock {
+    padding-top: 15px;
+    padding-bottom: 45px;
+    h2 {
+      font-weight: $font-weight-light;
+      font-size: 46px;
+      line-height: 1;
+      margin-bottom: $m1;
+      span {
+        font-weight: $font-weight-semibold;
+      }
+      @include media("<=laptop") {
+        font-size: 45px;
+        text-align: center;
+      }
+      @include media("<tablet") {
+        font-size: 30px;
+        margin-bottom: $m1 / 1.5;
+      }
+    }
+
+    .fontWeightSemiBold {
+      font-weight: $font-weight-semibold;
+    }
+
+    .accentedParagraph {
+      margin-left: 15px;
+      p:before {
+        background-color: $primary;
+      }
+      p {
+        @include accented-paragraph-font;
+        font-size: 17px;
+        font-family: $font-family-body-text;
+        color: $demo-body-text;
+        &:first-of-type {
+          position: relative;
+          &:before {
+            width: 3px;
+            margin-left: -15px;
+            margin-top: 0.25rem;
+            line-height: 1rem;
+            height: 3rem;
+            content: "";
+            display: inline-block;
+            position: absolute;
+          }
+        }
+        @include media("<desktop") {
+          font-size: 16px;
+        }
+      }
+      @include media("<=tablet") {
+        margin-bottom: $pad * 1.5;
+      }
+      @include media("<=425px") {
+        margin-bottom: $pad;
+      }
+    }
+  }
+
+  .ctaButton {
+    text-decoration: none;
+    background-color: #0074cf;
+    color: white;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    padding: 0.75rem 1rem;
+    @include fluid-type(18px, 15px, $phone, $laptop);
+    @include media("<=tablet") {
+      font-size: 0.9375rem;
+      display: inline-block;
+      margin-top: 20px;
+      margin-bottom: 60px;
+      width: 75%;
+      max-width: 300px;
+      text-align: center;
+    }
+    @include media("<=425px") {
+      margin-top: 55px;
+    }
+  }
+
+  .ctaButton:hover {
+    background-color: $secondary;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .thinArrowRight {
+    vertical-align: middle;
+    border-style: none;
+  }
+}

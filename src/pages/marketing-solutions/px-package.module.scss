@@ -1,0 +1,110 @@
+@import "../../styles/_site-variables.scss";
+
+.pxPackageStyles {
+  .iconStrapline {
+    img {
+      max-width: 25px;
+    }
+    p {
+      color: $primary;
+      display: inline;
+      font-family: "Roboto";
+      font-weight: $font-weight-bold;
+      font-size: $font-size-sm;
+    }
+    & + .innerTitle {
+      h2 {
+        margin-bottom: 10px;
+      }
+      & + .accentedParagraph p {
+        color: #797979;
+      }
+    }
+  }
+
+  .imgResponsive {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    //margin-bottom: $m1 * 1.5;
+  }
+
+  .linkIcon {
+    margin-right: 10px;
+  }
+
+  .listRow,
+  .largeIconRow {
+    margin-bottom: $m1 * 3;
+    @include media("<laptop") {
+      margin-bottom: $m1;
+    }
+  }
+
+  .noDot {
+    list-style-type: none;
+  }
+
+  .productBenefitsUl {
+    float: right;
+    @include media("<=tablet") {
+      float: none;
+      margin-bottom: 0;
+    }
+  }
+
+  .noDot li {
+    font-size: $font-size-lg * 1.25;
+    color: $primary;
+    font-weight: $font-weight-medium;
+    margin-bottom: 25px;
+    @include media("<=tablet") {
+      font-size: $font-size-lg * 1.15;
+    }
+  }
+
+  .noDot img {
+    width: $font-size-lg * 1.25;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px calc(17.5px / 2); /* difference between bootstrap col-4 width and design panel width */
+    @include media("<=laptop") {
+      margin: 20px auto 40px;
+    }
+
+    .panelHeading {
+      color: $primary;
+      margin: 5px 0;
+      @include fluid-type($font-size-lg, $font-size-lg, $laptop, $desktop);
+      font-family: $font-family-inner-block-headings;
+      font-weight: $font-weight-bold;
+      @include media("<=laptop") {
+        font-size: 16px;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .panelRow {
+    align-items: flex-start;
+  }
+
+  .iconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .imgIcon {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+  .practiceEfficienies {
+    margin-bottom: 50px;
+  }
+}

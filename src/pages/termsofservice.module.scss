@@ -1,0 +1,50 @@
+@import "../styles/_site-variables.scss";
+
+.termsOfServicePage {
+  /* Styles unique to this page component */
+  .termsOfService {
+    li {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+  .gbiTos:before {
+    background-position: initial !important;
+  }
+  .gbiTos:after {
+    background-position: initial !important;
+  }
+
+  .termsListAlpha {
+    list-style-type: lower-alpha;
+    margin-left: 2rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    color: rgba(75, 75, 75, 1);
+    b {
+      color: black;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  .terms-blue {
+    color: $primary;
+  }
+
+  ol {
+    padding-inline-start: 0;
+    & > li {
+      font-size: 1.5rem;
+      p,
+      li {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+}

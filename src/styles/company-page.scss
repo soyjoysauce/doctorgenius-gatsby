@@ -1,0 +1,10 @@
+@import "_site-variables.scss";
+.company {
+  @include media("<tablet") {
+    // ----------- NAVIGATION STYLING -----------
+    .logo img {
+      margin-top: 40px;
+    }
+  }
+  // ----------- END NAVIGATION STYLING -----------
+}

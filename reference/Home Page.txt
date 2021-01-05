@@ -1,0 +1,31 @@
+Homepage
+
+<div className="inner-title">
+    <h2>Why...?</h2>
+</div>
+<div className="accented-block">
+    <p>aliwjadliaw</p>
+</div>
+
+
+<Container>
+    <Row>
+        <TwoColumn>
+            <img>
+        </TwoColumn>
+
+        <TwoC olumn>
+            <AccentedBlock
+                <InnerHeading
+                    title="Why Is...?"
+                />
+
+                <InnerHeading>
+                    Why is...?
+                </InnerHeading>
+            >
+
+            </AccentedBlock>
+        </TwoC>
+
+

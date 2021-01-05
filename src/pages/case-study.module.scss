@@ -1,0 +1,246 @@
+@import "../styles/_site-variables.scss";
+
+.caseStudyPage {
+  .Panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px calc(17.5px / 2); /* difference between bootstrap col-4 width and design panel width */
+    @include media("<=laptop") {
+      margin: 20px auto 40px;
+    }
+    .iconWrapper {
+      height: 86px;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .imgIcon {
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+    @include media("<=laptop") {
+      margin: 20px auto;
+    }
+    @include media(">=tablet") {
+      align-items: flex-start;
+    }
+  }
+
+  .logoBlock {
+    text-align: center;
+
+    img {
+      padding: 10px;
+    }
+    @include media("<=laptop") {
+      padding-bottom: 30px;
+    }
+  }
+
+  .OurPlansIMGContainer {
+    img {
+      -webkit-transform: translateX(6%);
+      transform: translateX(6%);
+
+      @include media("<laptop") {
+        margin-bottom: 50px;
+        margin-top: -75px;
+      }
+    }
+  }
+
+  .PanelQuadrant {
+    h4 {
+      font-size: 22px;
+      font-weight: $font-weight-semibold;
+    }
+    p {
+      font-size: 14px;
+      font-weight: $font-weight-light;
+    }
+
+    .PanelQuadItem {
+      // padding-left: 0;
+      padding-bottom: 25px;
+      @include media("<desktop") {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+      @include media("<tablet") {
+        padding-bottom: 60px;
+        padding-left: 25px;
+        max-width: 350px;
+      }
+      .PanelQuadTextBlock {
+        text-align: center;
+        p {
+          text-align: left;
+        }
+      }
+      h4 {
+        line-height: 1.2;
+        text-align: left;
+        @include media("<tablet") {
+          display: inline-block;
+        }
+      }
+      img {
+        @include media("<tablet") {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .subtitle {
+    color: #a8a8a8;
+    font-size: $h2-font-size-main;
+    font-style: italic;
+    @include fluid-type(
+      21px,
+      44px,
+      $tablet,
+      $laptop
+    ); /* desktop - 53, tablet - 45, small - 38 */
+  }
+
+  .caseStudyContainer {
+    h2 {
+      font-size: $h2-font-size-main;
+      @include fluid-type(21px, 45px, $tablet, $laptop);
+    }
+    > div {
+      margin-bottom: 0;
+    }
+  }
+
+  .clientQuoteBlock {
+    text-align: center;
+    font-weight: $font-weight-light;
+
+    .clientQuote {
+      color: $primary;
+      font-size: 26px;
+      padding: 35px 0 20px;
+      margin: 0 auto;
+      font-weight: $font-weight-normal;
+    }
+    .clientAuthor {
+      color: $demo-body-text;
+      font-family: $font-family-body-text;
+      font-weight: $font-weight-medium;
+    }
+  }
+  .caseStudyTable {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(3, 100px);
+    @include media("<=laptop") {
+      grid-template-rows: repeat(3, 75px);
+    }
+  }
+  .caseStudyItem {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    /* There has to be a better way to do these css grid inline borders */
+    &:nth-child(odd) {
+      border-right: 1px solid #dfdfdf;
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      border-bottom: 1px solid #dfdfdf;
+    }
+    @include media("<=laptop") {
+      height: 75px;
+      padding: 12px;
+    }
+    .callout {
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      flex-basis: 150px;
+      letter-spacing: -0.12rem;
+      margin-right: 10px;
+      /* inherit this from somewhere else */
+      color: $primary;
+      font-size: 2.5rem; /* 40px */
+      font-weight: bold;
+      font-family: $font-family-inner-block-headings;
+      @include media("<laptop") {
+        flex-basis: initial;
+        letter-spacing: 0rem;
+      }
+      @include fluid-type(
+        16px,
+        35px,
+        $tablet,
+        $laptop
+      ); /* desktop - 53, tablet - 45, small - 38 */
+    }
+    p:not(.callout) {
+      font-family: Roboto;
+      flex-basis: 150px;
+      font-size: 0.9375rem; /* 15px */
+      margin: 0;
+      padding: 0;
+      @include fluid-type(
+        9px,
+        15px,
+        $phone,
+        $laptop
+      ); /* desktop - 53, tablet - 45, small - 38 */
+    }
+  }
+
+  .imgResponsive {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+  }
+
+  /*
+  * Some images from the deisgn have a blurred shadow/background
+  * which makes the actual width larger than the dimensions appear.
+  * This lets them bleed slightly out of their column space to
+  * accomodate. 125% is a just a rough guess
+  */
+  .imgResponsive.blurBleed {
+    width: 90%;
+    transform: translateX(6%);
+    @include media("<laptop") {
+      width: 100%;
+      transform: translateX(0%);
+    }
+  }
+  .imgResponsive.blurBleedRight {
+    width: 90%;
+    transform: translateX(-6%);
+    @include media("<laptop") {
+      width: 100%;
+      transform: translateX(0%);
+    }
+  }
+  .imgContainer {
+    @include media("<laptop") {
+      padding-bottom: 50px;
+    }
+  }
+  #caseStudyHeader {
+    font-size: 45px;
+    font-weight: $font-weight-bold;
+    @include media("<=tablet") {
+      font-size: 21px;
+    }
+  }
+}

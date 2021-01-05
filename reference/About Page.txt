@@ -1,0 +1,26 @@
+Company (About)
+<h2>What <span>Clients Are Saying</span></h2>
+
+<div className="inner-title">
+    <h3 className="subheading">Testimonials</h3>
+    <h2 className="underlined">What <span>Clients Are Saying</span></h2>
+</div>
+
+
+<div className="inner-title"> 4rem/4,2rem
+    <h3 className="subheading">Performance...</h3>
+    <h2>We Care...</h2>
+</div>
+
+Site
+html { font-size: 14px}
+
+Home
+.page-home .inner-title { font-size: 4.2rem }
+.page-home .inner-title h2 { font-size: 1.2em }
+.page-home .inner-title .subheading { font-size: 1em }
+
+Non-home
+.page:not(.home) .inner-title { font-size: 4rem }
+.page-home .inner-title h2 { font-size: 1em }
+.page:not(.home) .inner-title .subheading { font-size: .8em }

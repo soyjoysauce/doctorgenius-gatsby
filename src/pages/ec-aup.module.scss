@@ -1,0 +1,46 @@
+@import "../styles/_site-variables.scss";
+
+.ecaupPage {
+  /* Styles unique to this page component */
+  .ecAup {
+    li {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  .gbiEcaup:before,
+  .gbiEcaup:after {
+    background-position: initial !important;
+  }
+  p {
+    margin-bottom: 1.5rem;
+    color: rgba(75, 75, 75, 1);
+    b {
+      color: black;
+    }
+  }
+  ol {
+    &.alphaList {
+      list-style-type: lower-alpha;
+    }
+    padding-inline-start: 0;
+    & > li {
+      font-size: 1.5rem;
+      p,
+      li {
+        font-size: 1rem;
+      }
+    }
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  ul {
+    margin-bottom: 15px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

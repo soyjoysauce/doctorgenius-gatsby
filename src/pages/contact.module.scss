@@ -1,0 +1,160 @@
+@import "../styles/_site-variables.scss";
+
+.contactPage {
+  /* Styles unique to this page component */
+
+  /* Global styles - to this page */
+
+  .mainContent {
+    padding-bottom: 0;
+    @include media("<=425px") {
+      padding-bottom: 4px;
+    }
+  }
+  .hero {
+    height: auto;
+    padding-top: 80px;
+    background: top/300px repeat-x url("../img/background-texture.png"),
+      center 74%/300px repeat-x url("../img/background-texture-flipped.png"),
+      center calc(74% + 300px) / 300px repeat-x
+        url("../img/background-texture.png");
+  }
+  .strapline {
+    color: $primary;
+    font-size: 33px;
+  }
+  .contactForm {
+    padding: $pad;
+  }
+  .phoneNumber a {
+    font-size: $m1;
+    color: #000;
+    text-decoration: none;
+    font-family: $font-family-body-text;
+  }
+  .contactAddress,
+  .contactHours {
+    font-size: 22px;
+    font-family: $font-family-body-text;
+  }
+  .dgMap {
+    border: none;
+  }
+  .getDirections {
+    color: $primary;
+    border-color: $primary;
+    padding: 8px 7.5%;
+    text-align: center;
+    font-size: 17px;
+    transition: 0.4s background-color;
+    border: 1px solid;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    background: none;
+  }
+  .getDirections:hover {
+    color: $secondary;
+    border-color: $secondary;
+  }
+
+  .getDirections a:hover {
+    text-decoration: none;
+  }
+
+  /* Styling for laptops and above - 991px*/
+  @include media(">=laptop") {
+    h1 {
+      font-size: 87px;
+      line-height: 1;
+      font-weight: $font-weight-normal;
+    }
+    .mutedText {
+      font-size: 28px;
+      color: $mute;
+    }
+    .companyInfo {
+      text-align: right;
+    }
+    .infoAndMap {
+      padding-bottom: $m1 * 3;
+    }
+    h3.strapline {
+      font-size: 33px;
+    }
+  }
+
+  /* Styling for Tablets: 768 - 991 */
+  @include media("<=laptop", ">=tablet") {
+    .hero {
+      background: top/350px repeat-x url("../img/background-texture.png"),
+        center 51%/300px repeat-x url("../img/background-texture-flipped.png"),
+        center calc(51% + 300px) / 300px repeat-x
+          url("../img/background-texture.png");
+    }
+    h1 {
+      font-size: 87px;
+      line-height: 1;
+      font-weight: $font-weight-normal;
+    }
+    .mutedText {
+      font-size: 21px;
+      color: $mute;
+    }
+    .companyInfo {
+      text-align: center;
+      margin-bottom: $m1;
+    }
+    .dgMap {
+      width: 100%;
+    }
+    .infoAndMap {
+      padding-bottom: 0;
+    }
+    .mapHolder {
+      padding: 20px 0 0 0 !important;
+      line-height: 1;
+      margin-bottom: -5px;
+    }
+  }
+
+  /* Styling for phones - 767 and below */
+  @include media("<tablet") {
+    .hero {
+      background: top/350px repeat-x url("../img/background-texture.png"),
+        center 51%/300px repeat-x url("../img/background-texture-flipped.png"),
+        center calc(51% + 300px) / 300px repeat-x
+          url("../img/background-texture.png");
+    }
+    h1 {
+      font-size: 49px;
+      line-height: 1;
+      font-weight: $font-weight-normal;
+    }
+
+    .strapline {
+      font-size: 24px;
+    }
+
+    .companyInfo {
+      text-align: center;
+    }
+    .mutedText {
+      font-size: 18px;
+    }
+    .dgMap {
+      width: 100%;
+    }
+    .infoAndMap {
+      padding-bottom: 0;
+    }
+    .mapHolder {
+      padding: 20px 0 0 0 !important;
+      line-height: 1;
+      margin-bottom: -5px;
+    }
+    .mutedText {
+      font-size: 21px;
+      color: $mute;
+    }
+  }
+}

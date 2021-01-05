@@ -1,0 +1,136 @@
+@import "../styles/_site-variables.scss";
+
+// $homepage-h1-font-size: $font-size-base * 4.881;
+/* lg - 81; md - 42; sm - 42 */
+
+.indexPage {
+  /* Styles unique to this page component */
+  #lightTextAllInOne,
+  #lightTextWhyChooseDG {
+    font-weight: $font-weight-light;
+  }
+
+  /*
+  * Some images from the deisgn have a blurred shadow/background
+  * which makes the actual width larger than the dimensions appear.
+  * This lets them bleed slightly out of their column space to
+  * accomodate. 125% is a just a rough guess
+  */
+  .blurBleed {
+    /* homepage images are slightly larger, meaning they should bleed slightly less */
+    max-width: 120%;
+    width: 115%;
+    margin: auto;
+    display: block;
+    transform: translateX(-10%);
+    @include media("<laptop") {
+      width: 100%;
+      transform: translateX(-5%);
+      transform: translate(0);
+    }
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px calc(17.5px / 2); /* difference between bootstrap col-4 width and design panel width */
+    @include media("<=laptop") {
+      margin: 20px auto 40px;
+    }
+
+    .panelHeading {
+      color: $primary;
+      margin: 5px 0;
+      @include fluid-type(
+        $panel-heading-font-size * 0.85,
+        $panel-heading-font-size,
+        $laptop,
+        $desktop
+      );
+      font-family: $font-family-inner-block-headings;
+      font-weight: $font-weight-bold;
+      @include media("<=laptop") {
+        font-size: 24px;
+        margin: 5px 0;
+      }
+    }
+
+    .panelBody {
+      font-size: $font-size-lg;
+      color: $mute-text-darker;
+      line-height: 1.2;
+      @include media("<=laptop") {
+        font-size: 14px;
+      }
+    }
+
+    p:not(.panelHeading) {
+      font-size: $font-size-normal-text;
+      width: 60%;
+      color: black;
+      @include media("<=laptop") {
+        width: 100%;
+      }
+    }
+  }
+
+  .marketingDashboardLg.imgResponsive {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    @include media("<=phone") {
+      display: none;
+    }
+  }
+
+  .marketingDashboardSm.imgResponsive {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    @include media(">phone") {
+      display: none;
+    }
+  }
+
+  .panelRow {
+    align-items: flex-start;
+  }
+
+  .iconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .imgIcon {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .whiteText {
+    color: white;
+  }
+
+  .button {
+    color: #fff;
+    background-color: $primary;
+    text-align: center;
+    font-size: $font-size-btn;
+    transition: 0.4s background-color;
+    &.flat {
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  .button:hover {
+    text-decoration: none;
+    color: $primary-text;
+    background-color: $button-hover-green;
+  }
+}

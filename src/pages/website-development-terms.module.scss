@@ -1,0 +1,52 @@
+@import "../styles/_site-variables.scss";
+
+.dropdown-content-block {
+  p {
+    color: inherit;
+  }
+}
+
+.websiteDevelopmentTermsPage {
+  .dropdown-content-block {
+    p {
+      color: inherit;
+    }
+  }
+  li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  li li {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .listedItems {
+    li li {
+      list-style-type: circle;
+      margin-left: 20px;
+    }
+  }
+  /* Styles unique to this page component */
+  .gbiWebDev:before,
+  .gbiWebDev:after {
+    background-position: initial !important;
+  }
+  .accentedParagraph p {
+    color: white;
+  }
+
+  ol {
+    padding-inline-start: 0;
+    & > li {
+      font-size: 1.5rem;
+      p,
+      li {
+        font-size: 1rem;
+      }
+    }
+  }
+  ul {
+    margin-bottom: 15px;
+  }
+}

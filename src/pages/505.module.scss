@@ -1,0 +1,67 @@
+@import "../styles/_site-variables.scss";
+
+.fiveZeroFivePage {
+  /* Styles unique to this page component */
+  .hero {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 55% 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    h1 {
+      color: #0086d6;
+      font-size: 12em;
+      font-family: $font-family-inner-block-headings;
+      line-height: 1;
+    }
+    h2 {
+      color: #a6a5a6;
+      font-size: 1.6em;
+      font-family: $font-family-inner-block-headings;
+    }
+    p {
+      color: #a6a6a6;
+    }
+    .sm500 img {
+      margin: 15px 8px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    .gbi500:before,
+    .gbi500:after {
+      height: 100vh;
+      background-position: 20% !important;
+      opacity: 0.1 !important;
+    }
+  }
+
+  @media only screen and (min-width: 993px) and (max-width: 1024px) {
+    .gbi500:before,
+    .gbi500:after {
+      height: 100vh;
+      background-position: 14% !important;
+      opacity: 0.1 !important;
+      background-color: #f0f3f4;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .hero {
+      h1 {
+        font-size: 9em;
+      }
+    }
+    .gbi500:before,
+    .gbi500:after {
+      height: 100vh;
+      background-position: 29% !important;
+      opacity: 0.1 !important;
+      background-color: #f0f3f4;
+    }
+  }
+}

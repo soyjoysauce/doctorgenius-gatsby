@@ -1,0 +1,87 @@
+@import "_site-variables.scss";
+// Homepage specific
+//$homepage-h1-font-size: $font-size-base * 4.881;
+/* lg - 81; md - 42; sm - 42 */
+/*.homepage {
+  &.v2 {
+    .hero {
+      //background-image: url("/hero/homepage-v2-with-tablet.jpg");
+      height: 690px;
+      .demo-cta a {
+        background: #0074cf;
+      }
+    }
+    .accent-block * {
+      border: none !important;
+    }
+  }
+}
+*/
+
+/* Removed full-bleed css as we do not use it anymore */
+/*.full-bleed-image-row {
+  height: 650px;
+  @include media("<=laptop") {
+    height: 400px;
+  }
+  @include media("<tablet") {
+    height: 350px;
+  }
+  @include media("<=600px") {
+    height: 250px;
+  }
+  @include media("<=phone") {
+    height: 350px;
+  }
+  @include media("<=320px") {
+    height: 300px;
+  }
+}
+.full-bleed-img {
+  background: url("../img/homepage-marketing-dashboard-desktop.png") no-repeat 50%
+    50%;
+  background-size: cover;
+  height: 100%;
+  @include media("<=tablet") {
+    background: url("../img/homepage-marketing-dashboard-tablet.png") no-repeat 50%
+      50%;
+    background-size: cover;
+    height: 100%;
+  }
+  @include media("<=phone") {
+    background: url("../img/homepage-marketing-dashboard-mobile.png") no-repeat
+      50% 50%;
+    background-size: cover;
+    height: 100%;
+  }
+} */
+
+/* TODO START- Homepage border in the hero - need to fix this */
+// .homepage .hero .accent-block {
+//   position: relative;
+//   border: solid 2px $primary-text;
+// }
+// .homepage .hero .accent-block::before,
+// .homepage .hero .accent-block::after {
+//   position: absolute;
+//   background-color: inherit;
+//   content: "";
+//   z-index: 1;
+// }
+// .homepage .hero .accent-block::before {
+//   width: 400px;
+//   left: calc(50% - 200px);
+//   height: calc(100% + 4px);
+//   top: -2px;
+// }
+// .homepage .hero .accent-block::after {
+//   height: 100px;
+//   left: -2px;
+//   width: calc(100% + 4px);
+//   top: calc(50% - 50px);
+// }
+// .homepage .hero .accent-block > * {
+//   position: relative;
+//   z-index: 2; /* ensure any child elements sit above pseudos */
+// }
+/* TODO END - Homepage border in the hero - need to fix this */

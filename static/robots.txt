@@ -1,0 +1,3 @@
+Sitemap: https://doctorgenius.com/sitemap.xml
+
+User-agent: *

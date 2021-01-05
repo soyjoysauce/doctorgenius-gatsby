@@ -1,0 +1,349 @@
+@import "../styles/_site-variables.scss";
+
+.demoPage {
+  /* End awful hack danger zone */
+  .p10 {
+    padding: 10px;
+  }
+  #demoTestimonials {
+    font-size: $h2-font-size-main;
+  }
+  .hero {
+    height: auto;
+    padding-top: 165px;
+    padding-bottom: 50px;
+
+    @include media("<desktop") {
+      padding-top: 110px;
+    }
+    .heroRow {
+      @include media(">=desktop") {
+        display: inline-block;
+      }
+    }
+
+    hr {
+      @include media(">=desktop") {
+        margin: 40px 0 31px;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      content: " ";
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.85);
+    }
+    h1 {
+      font-size: 64px;
+      @include fluid-type(
+        40px,
+        58px,
+        $tablet,
+        $laptop
+      ); /* desktop - 53, tablet - 45, small - 38 */
+
+      line-height: 1;
+      font-weight: $font-weight-medium;
+      margin-bottom: 25px;
+      & + p {
+        font-weight: $font-weight-light;
+        color: #707070;
+        font-size: 18px;
+        margin-bottom: 20px;
+        @include media("<desktop") {
+          padding: 0 3%;
+          text-align: center;
+        }
+      }
+      @include media("<desktop") {
+        padding: 0 1%;
+        font-size: 50px;
+        text-align: center;
+      }
+      @include media("<=tablet") {
+        font-size: 35px;
+      }
+    }
+
+    .accentedParagraph {
+      p {
+        font-size: 17px;
+      }
+      margin-bottom: $m1;
+    }
+
+    #slimInnerTitle {
+      font-weight: $font-weight-medium;
+      @include media("<desktop") {
+        text-align: center;
+        margin-top: $m1;
+      }
+      @include media("<=425px") {
+        font-size: 45px;
+      }
+    }
+  }
+
+  .planDetails {
+    position: relative;
+    padding: 20px 20px 20px 0;
+    display: flex;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    align-items: center;
+
+    .planTitle {
+      width: 65%;
+      padding-right: 20px;
+      text-align: right;
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    .planStripe {
+      width: 5%;
+      height: 70px;
+      border-right: 5px solid #0074cf;
+    }
+    .planSpecifics {
+      width: 30%;
+      padding-left: 20px;
+      right: 0;
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  .planDetails h3,
+  .planDetails h4 {
+    font-family: "Agenda", sans-serif;
+    font-size: 40px;
+    font-weight: $font-weight-normal;
+  }
+  .planDetails h3 {
+    font-family: "Agenda", sans-serif;
+    line-height: 0.8;
+  }
+  .planDetails h4 {
+    font-family: montserrat, sans-serif;
+    line-height: 0.75;
+    font-weight: $font-weight-medium;
+  }
+
+  .hero h1 + p,
+  .finePrint,
+  .planSpecifics p {
+    font-family: Roboto;
+  }
+  .finePrint {
+    font-size: 12px;
+    color: #aeaeae;
+  }
+  .planDetails .title p {
+    font-weight: $font-weight-light;
+    color: #707070;
+  }
+  .planDetails .planSpecifics p {
+    font-weight: $font-weight-normal;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #0074cf;
+  }
+  .contactFormContainer {
+    @include media("<desktop") {
+      padding-bottom: 50px;
+    }
+  }
+  .contactForm {
+    height: 620px;
+    @include media("<=368px") {
+      height: 675px;
+    }
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    text-align: center;
+    background: white;
+
+    .header {
+      height: auto;
+      background: linear-gradient(to right, #0074cf, #1094fe);
+      padding: 20px 60px 15px;
+      line-height: 1;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      h3 {
+        color: white;
+        font-size: 28px;
+        font-weight: $font-weight-normal;
+        margin-bottom: 0;
+      }
+    }
+    .finePrint {
+      font-size: 12px;
+      color: #707070;
+      line-height: 1.5;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+    .formBody {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      & > div,
+      & > div > form {
+        width: 100%;
+      }
+    }
+  }
+  .reviewSection {
+    display: flex;
+    align-items: center;
+    @include media("<desktop") {
+      align-items: flex-start;
+    }
+    .body {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      @include media("<desktop") {
+        margin-left: 28px;
+      }
+      @include media("<=tablet") {
+        width: 100%;
+      }
+      .stars {
+        flex-basis: 200px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        img {
+          margin-right: 10px;
+          width: 25px;
+        }
+      }
+      .date {
+        font-family: "Roboto", sans-serif;
+        color: #707070;
+        line-height: 2;
+      }
+      .content {
+        width: 100%;
+        p {
+          margin-bottom: 1rem;
+          color: #707070;
+          font-weight: $font-weight-light;
+          font-size: 17px;
+        }
+      }
+    }
+    .author {
+      width: 20%;
+      text-align: center;
+      font-size: 14px;
+      font-weight: $font-weight-normal;
+      color: #707070;
+      @include media("<tablet") {
+        display: none;
+      }
+      .portrait {
+        border-radius: 50%;
+        // max-width: 100%;
+        max-width: 90px;
+        width: 90px;
+        @include media("<desktop") {
+          width: 85%;
+        }
+        // padding-left: 50px;
+        // padding-right: 50px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .ourPlansChart {
+    .finePrint {
+      @include media("<desktop") {
+        text-align: center;
+      }
+    }
+  }
+
+  .demoPlansRow {
+    .ourPlansText,
+    .ourPlansChart {
+      @include media(">=desktop") {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+      }
+    }
+  }
+  .disappear {
+    @include media("<=tablet") {
+      display: none;
+    }
+  }
+
+  .mobileReviewHead,
+  div.mobileReviewHead {
+    @include media(">=tablet") {
+      display: none;
+    }
+  }
+  div.stars,
+  div.date {
+    @include media("<tablet") {
+      display: none;
+    }
+  }
+
+  p.mobileName,
+  div.mobileStars,
+  div.mobileDate,
+  .mobileReviewHead {
+    width: 100%;
+  }
+
+  .mobileReviewHead {
+    margin-bottom: 10px;
+  }
+
+  .mobileStars img {
+    margin-right: 5px;
+  }
+
+  .portraitContainer {
+    padding: 0px 20px;
+  }
+  .bioContainer {
+    padding-left: 40px;
+  }
+  p.mobileName,
+  div.mobileDate p {
+    color: #707070;
+    font-weight: $font-weight-light;
+    font-size: 17px;
+  }
+  p.mobileName {
+    font-weight: 600;
+  }
+  @media only screen and (max-width: 374px) {
+    .portraitContainer,
+    p.mobileName,
+    div.mobileDate p,
+    .mobileStars {
+      text-align: center;
+    }
+    .demo .bioContainer {
+      padding: 0;
+    }
+  }
+}

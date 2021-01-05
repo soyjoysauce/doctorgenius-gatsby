@@ -1,0 +1,326 @@
+@import "../styles/_site-variables.scss";
+
+.testimonialsSlider {
+  .slick-list {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.cardSlider {
+  .card,
+  .card .portrait {
+    height: 350px; /* This image probably needs to be a background image */
+  }
+
+  .card {
+    width: 700px;
+    @include media("<=800px") {
+      width: 650px;
+      // margin: 0 auto;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    @include media("<=700px") {
+      width: 80%;
+      margin: 0 auto;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    @include media("<=phone") {
+      width: 95%;
+    }
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    overflow-y: hidden;
+    border-radius: 10px;
+
+    /*
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      content: "";
+      */
+
+    background: linear-gradient(
+        to left,
+        rgba(246, 251, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 40%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      white;
+
+    .cardCopyHolder {
+      /* width */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #fbfbfb;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background-color: #bdbdbd;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #545454;
+      }
+    }
+
+    /* card layout: */
+    .quoteWrapper {
+      position: sticky;
+      top: 0;
+      bottom: 0;
+    }
+    .detailsFooter {
+      position: absolute;
+      width: calc(100% - (13.188% + 5%));
+      height: 25%;
+      margin-bottom: 4%;
+      bottom: 1%;
+      left: 13.188%;
+    }
+    .imageArea {
+      position: absolute;
+      width: 17.5%;
+      @include media("<=700px") {
+        width: 27.5%;
+      }
+      @include media("<565px") {
+        width: 27.5%;
+      }
+      @include media("<400px") {
+        width: 23.5%;
+      }
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .imageWrapper {
+      width: 85px;
+      height: 85px;
+      @include media("<=565px") {
+        width: 65px;
+        height: 65px;
+      }
+      @include media("<=400px") {
+        width: 55px;
+        height: 55px;
+      }
+    }
+    .authorArea {
+      width: 80%;
+      @include media("<=700px") {
+        width: 73%;
+      }
+      @include media("<565px") {
+        width: 70%;
+      }
+      @include media("<400px") {
+        width: 70%;
+      }
+      height: 100%;
+      right: 0;
+      margin-left: 2.5%;
+      float: right;
+      display: flex;
+      align-items: center;
+    }
+    .cardContentWrapper {
+      position: absolute;
+    }
+    .quoteWrapper {
+      display: inline-block;
+      width: 13.188%; /* 91/691 */
+    }
+    .cardContentWrapper {
+      margin-right: 10%;
+      line-height: 1.75;
+      font-size: 1rem;
+      height: auto;
+      width: calc(
+        100% - (13.188% + 10%)
+      ); /* 387 / 691 + Bumping this up a bit */
+      left: 13.188%;
+      z-index: 1;
+    }
+    .imageFallback {
+      /* width: 37.047%; /* 256/691 */
+      right: 0;
+      width: 100%;
+      z-index: 0;
+    }
+    .quoteWrapper {
+      height: 100%;
+    }
+    .cardContentWrapper,
+    .quoteWrapper {
+      top: 0;
+      margin-top: 37px;
+      /*
+        Mike's design: 37px of padding-top in the testimonials card of 314px height, so you'd expect the padding-top value to be 37 / 314 = 11.783%
+        but it's not; using 11.783% gives 132.781px padding-top
+        so what is this relative to? 11.783% * x = 132.781px; x = 1127px, which is the parent container's width;
+      */
+    }
+  }
+}
+.imageWrapper {
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  position: relative;
+}
+
+.imageFallback {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #62b1ef, #0074cf);
+
+  h5 {
+    font-size: 34px;
+    @include media("<565px") {
+      font-size: 26px;
+    }
+    @include media("<400px") {
+      font-size: 21px;
+    }
+    display: block;
+    color: white;
+    z-index: 10;
+  }
+  /*
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    content: "";
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 5%,
+      rgba(97, 169, 225, 1) 45%,
+      rgba(0, 116, 207, 1) 90%,
+      rgba(0, 116, 207, 1) 100%
+    );
+  }*/
+}
+.quoteMark {
+  margin-top: -20px;
+  max-width: 44%; /* 40/91 */
+  margin: auto;
+  display: block;
+}
+.cardWrapper {
+  /* height: 365px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copy {
+  z-index: 15;
+  background: rgba(255, 255, 255, 0);
+  p {
+    font-weight: 400;
+    color: #989898;
+    margin-bottom: 0px;
+    padding: 10px;
+  }
+}
+.open .moreLink,
+.closed .moreLink {
+  display: block;
+}
+.cardCopyHolder {
+  height: calc(10px + 1.75em * 5); /* line height * # of lines to show */
+  @include media("<=phone") {
+    height: calc(10px + 1.75em * 6);
+  }
+  transition: all 2s;
+  border-radius: 12px;
+}
+.open {
+  .cardCopyHolder {
+    background: rgba(255, 255, 255, 0.9);
+    height: calc(
+      10px + 1.75em * 10
+    ) !important; /* line height * # of lines to show */
+  }
+}
+.moreLink {
+  height: 1em;
+  display: none;
+  position: absolute;
+  bottom: -1em;
+  right: 5%;
+  color: #0074cf;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.author {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 0;
+}
+.location {
+  font-size: 1.125rem;
+  color: #888888;
+  font-weight: 300;
+  margin-bottom: 0;
+  line-height: 1;
+}
+.open .cardCopyHolder {
+  overflow-y: auto !important;
+}
+.closed .cardCopyHolder {
+  overflow-y: hidden !important;
+}
+
+.slickDots {
+  /* standard */
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+
+  /* overrides */
+
+  bottom: 0;
+  top: 100%;
+
+  margin-top: 40px;
+  position: initial;
+  margin-bottom: 55px;
+  li {
+    margin: 0 16px;
+
+    button:before {
+      width: 21px;
+      height: 21px;
+      font-size: 21px;
+      color: #a9a9a9;
+    }
+  }
+}

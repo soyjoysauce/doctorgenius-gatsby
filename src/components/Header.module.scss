@@ -1,0 +1,12 @@
+@import "../styles/_site-variables.scss";
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 120px;
+  z-index: 1800;
+  @include media("<laptop") {
+    height: 75px;
+  }
+}

@@ -1,0 +1,37 @@
+@import "../styles/_site-variables.scss";
+
+.outagePage {
+  .hero {
+    padding-top: 100px;
+  }
+  p.tagline {
+    color: $primary;
+    @include media(">tablet") {
+      margin-bottom: 30px;
+    }
+    @include media("<=tablet") {
+      margin-bottom: 15px;
+    }
+    @include fluid-type(
+      18px,
+      26px,
+      $tablet,
+      $desktop
+    ); /* desktop - 53, tablet - 45, small - 38 */
+  }
+
+  h1 {
+    @include media(">tablet") {
+      margin-bottom: 30px;
+    }
+    @include media("<=tablet") {
+      margin-bottom: 15px;
+    }
+    @include fluid-type(
+      49px,
+      80px,
+      $tablet,
+      $desktop
+    ); /* desktop - 53, tablet - 45, small - 38 */
+  }
+}

@@ -1,0 +1,632 @@
+@import "../styles/_site-variables.scss";
+
+nav {
+  height: 120px;
+  display: flex;
+  transition: all 0.3s;
+  font-family: $font-family-body-text;
+  @include media("<laptop") {
+    height: 75px;
+  }
+  // Container module classname gets passed down to Container Component through Navigation.js
+  .container,
+  .containerFluid {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  ul li {
+    list-style-type: none;
+  }
+  .navButton {
+    border-color: white;
+    padding: 8px 7.5%;
+    border: 1px solid;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+
+    &.freeDemoButton {
+      transition: 0.3s background-color, 0.3s border-color;
+    }
+    &.freeDemoButton:hover {
+      background-color: #fff;
+      border-color: $primary;
+      a {
+        color: $primary;
+        transition: 0.3s color;
+      }
+    }
+  }
+  a {
+    transition: all 0.3s;
+  }
+  .demoOnly {
+    display: none !important;
+  }
+  .button.navButton {
+    width: 45%;
+  }
+  ul.navbarNav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0;
+    li a {
+      transition: text-shadow 0.3s;
+      &:hover,
+      &.active:hover {
+        text-shadow: 0 0 0.65px #fff, 0 0 0.65px #fff;
+      }
+    }
+  }
+
+  &.navbar {
+    position: relative;
+    @include media("<=laptop") {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .phone > a {
+      display: block;
+      .phoneHolder {
+        background-image: url("../img/icon/phone-white.svg");
+        background-size: contain;
+        height: 25px;
+        width: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: bottom;
+        display: inline-block;
+      }
+    }
+    .logo {
+      flex-basis: 20%;
+      @include media("<laptop") {
+        flex-basis: 75%;
+      }
+      a {
+        display: block;
+        .logoHolder {
+          background-image: url("../img/icon/logo-white.svg");
+          background-size: contain;
+          height: 40px;
+          max-height: 100%;
+          width: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          vertical-align: middle;
+
+          @include media("<=laptop") {
+            margin-left: 8px;
+            background-position: initial;
+          }
+        }
+      }
+    }
+    .mainLinks,
+    .contactLinks {
+      a {
+        color: $primary-text;
+        text-decoration: none;
+      }
+    }
+    .mainLinks {
+      flex-basis: 47%;
+
+      &.navbarCollapse {
+        flex-grow: 0;
+      }
+    }
+    .navbarToggler {
+      right: 24px;
+      padding: 0;
+      border: none;
+      position: absolute;
+      margin-top: -5px;
+      .navbarTogglerIcon {
+        background-image: url("../img/icon/nav-toggler.svg");
+        height: 15px;
+        width: 21px;
+      }
+    }
+    .contactLinks {
+      flex-basis: 26%;
+      position: relative;
+      @include media("<=laptop") {
+        display: none;
+      }
+      @include media(">=desktop") {
+        flex-basis: 23%;
+      }
+
+      .mainContactLinks {
+        .freeDemoButton {
+          padding-left: 0;
+          padding-right: 0;
+          width: auto;
+          a {
+            padding: 10px 21px;
+          }
+        }
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 0;
+      width: 100%;
+      padding-left: 0;
+    }
+    .dropdown {
+      display: inline-block;
+      position: static;
+      a.dropdownHeading:after {
+        content: "";
+        transition: opacity 0.5s;
+        opacity: 0;
+      }
+    }
+    .dropdown.show {
+      a.dropdownHeading {
+        position: relative;
+      }
+      a.dropdownHeading:after {
+        // content: "";
+        opacity: 1;
+        position: absolute;
+        top: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 9px solid #285c94;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+      }
+    }
+    .dropdownMenu {
+      color: $primary-text;
+      background-color: #285c94;
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 150;
+      left: -85px;
+      // right: 30%;
+      transition: opacity 0.5s;
+      top: 40px;
+      position: absolute;
+      border: none;
+      // transform: translateX(-50%);
+      // margin-right: auto;
+      // margin-left: auto;
+      a {
+        color: inherit;
+        &:hover {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+      .dropdownRow {
+        margin-bottom: 35px;
+      }
+      .dropdownRow:last-child {
+        margin-bottom: 0px;
+      }
+      .navIconWrapper {
+        display: inline-block;
+        width: 38px;
+        .imageIcon {
+          width: 32px;
+          height: 39px;
+        }
+      }
+      .dropdownContentBlock {
+        margin-left: 18px;
+      }
+    }
+    .dropdownMenu.show {
+      visibility: visible;
+      opacity: 1;
+      padding: 50px;
+      .dropdownRow {
+        width: 700px;
+        justify-content: space-around;
+        .dropdownItemBlock:hover {
+          .dropdownContentTitle {
+            text-shadow: 0 0 0.65px #8bd2ff, 0 0 0.65px #8bd2ff;
+            color: #8bd2ff;
+          }
+        }
+        img {
+          padding-top: 7px;
+        }
+        .dropdownContentBlock {
+          display: inline-block;
+          margin-left: 15px;
+          width: 80%;
+          vertical-align: top;
+          .dropdownContentTitle {
+            font-size: 14px;
+            font-weight: $font-weight-medium;
+            // letter-spacing: 0.1em;
+            transition: text-shadow 0.3s, color 0.3s;
+          }
+          p {
+            font-size: 12px;
+            font-weight: $font-weight-light;
+            margin-top: 5px;
+          }
+        }
+      }
+      .dropdownRow:last-child {
+        .dropdownContentBlock p {
+          margin-bottom: 0;
+        }
+      }
+    }
+    li {
+      font-weight: $font-weight-normal;
+      .active {
+        color: $primary-text;
+        font-weight: $font-weight-medium;
+      }
+    }
+    .mainLinks {
+      li {
+        font-size: 0.875rem;
+        font-weight: $font-weight-medium;
+      }
+    }
+    .contactLinks {
+      font-size: $font-size-nav-contact-links;
+      font-weight: $font-weight-normal;
+    }
+  }
+  &.navbar.mainNavbarStuck {
+    box-shadow: 0 1px 1px $grid-border;
+    background-color: #fff;
+    @include media("<=laptop") {
+      //background-color: $primary;
+      background: linear-gradient(
+        45deg,
+        rgba(#0074cf, 0.95) 0%,
+        rgba(#0074cf, 0.95) 55%,
+        rgba(#0b97c1, 0.95) 100%
+      );
+    }
+    &.stuckMidway {
+      height: 100px;
+      @include media("<laptop") {
+        height: 70px;
+      }
+      .dropdownMenu {
+        top: 58px;
+      }
+    }
+    &.stuckFully {
+      height: 80px;
+      @include media("<laptop") {
+        height: 65px;
+      }
+      .dropdownMenu {
+        top: 48px;
+      }
+      .dropdown.show {
+        a.dropdownHeading:after {
+          top: 40px;
+        }
+      }
+    }
+    a {
+      color: $demo-body-text;
+    }
+    .logo a .logoHolder {
+      background-image: url("../img/icon/logo-blue.svg");
+      @include media("<=laptop") {
+        background-image: url("../img/icon/logo-white.svg");
+        background-position: initial;
+      }
+    }
+    .phone > a {
+      .phoneHolder {
+        background-image: url("../img/icon/phone-blue.svg");
+      }
+    }
+    .navButton {
+      border-color: $primary;
+    }
+    .active {
+      color: $primary;
+    }
+    .contactLinks {
+      a {
+        color: $primary;
+      }
+    }
+    .dropdownMenu {
+      a {
+        color: $primary-text;
+      }
+    }
+    .navbarNav {
+      li a:hover {
+        text-shadow: 0 0 0.65px rgb(84, 84, 84) !important;
+      }
+      li a.active:hover {
+        text-shadow: 0 0 0.65px $primary !important;
+      }
+    }
+    .dropdown.show {
+      a.dropdownHeading:after {
+        top: 50px;
+      }
+    }
+    .freeDemoButton {
+      background-color: $demo-button-green;
+      border: $demo-button-green;
+      // background-color: red !important;
+      transition: 0.3s background-color, 0.3s border-color;
+      a {
+        color: $primary-text !important;
+        transition: 0.3s color;
+      }
+    }
+    .freeDemoButton:hover {
+      background-color: $button-hover-green !important;
+      border-color: $button-hover-green !important;
+    }
+  }
+
+  .iconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .imgIcon {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+// Navigation styling relavant to the Demo Page
+nav.demoNav {
+  &.navbar {
+    height: 80px !important;
+  }
+  .demoOnly {
+    display: flex !important;
+    .freeDemoButton,
+    .freeDemoButton.navButton {
+      transition: 0.3s background-color, 0.3s border-color;
+      background-color: $demo-button-green;
+      border-color: $demo-button-green !important;
+    }
+    .freeDemoButton:hover,
+    .freeDemoButton.navButton:hover {
+      background-color: $button-hover-green !important;
+      border-color: $button-hover-green !important;
+    }
+    li {
+      color: $primary-text;
+    }
+  }
+  &.mainNavbarStuck {
+    background-color: $primary;
+
+    .logo a .logoHolder {
+      background-image: url("../img/icon/logo-white.svg");
+    }
+    .freeDemoButton:hover {
+      background-color: $button-hover-green !important;
+      border-color: $button-hover-green !important;
+    }
+    .contactLinks ul.demoOnly li {
+      color: $primary-text;
+    }
+  }
+  .mainContactLinks {
+    display: none;
+  }
+  .mainLinks .navbarNav {
+    display: none;
+  }
+  a,
+  i {
+    color: $primary-text !important;
+  }
+  .button.navButton {
+    padding: 8px 7.5% !important;
+    border: 1px solid !important;
+    border-radius: 6px !important;
+    letter-spacing: 0.5px !important;
+    display: block;
+    width: 50%;
+  }
+}
+
+// Navigation styling relevant to the Contact Page
+nav.contactNav,
+nav.outageNav {
+  @include media(">=laptop") {
+    // ----------- NAVIGATION STYLING (DESKTOP) -----------
+    .logo a .logoHolder {
+      background-image: url("../img/icon/logo-blue.svg");
+    }
+    .mainLinks a,
+    .contactLinks a {
+      color: $primary;
+    }
+    &.mainNavbarStuck {
+      a {
+        color: $primary;
+      }
+      .freeDemoButton {
+        background-color: $primary;
+        a {
+          color: #fff !important;
+        }
+      }
+      .button.navButton {
+        &.freeDemoButton:hover {
+          color: $primary !important;
+          background-color: $primary-text !important;
+        }
+        &.freeDemoButton a:hover {
+          color: $primary !important;
+        }
+      }
+    }
+
+    .phone > a .phoneHolder {
+      background-image: url("../img/icon/phone-blue.svg");
+    }
+    .button.navButton {
+      border: 1px solid $primary;
+      &.freeDemoButton:hover {
+        background-color: $primary !important;
+        border-color: $primary !important;
+      }
+      &.freeDemoButton:hover a {
+        color: #fff !important;
+      }
+    }
+    .dropdownRow a {
+      color: $primary-text !important;
+    }
+    // ----------- END NAVIGATION STYLING (DESKTOP) -----------
+  }
+  @include media("<=laptop", ">=tablet") {
+    // ----------- NAVIGATION STYLING (TABLET) -----------
+    .logo a .logoHolder {
+      background-image: url("../img/icon/logo-white.svg");
+    }
+    // ----------- END NAVIGATION STYLING (TABLET) -----------
+  }
+  @include media("<tablet") {
+    // ----------- NAVIGATION STYLING (MOBILE) -----------
+    .logo a .logoHolder {
+      background-image: url("../img/icon/logo-white.svg");
+    }
+    // ----------- END NAVIGATION STYLING (MOBILE) -----------
+  }
+
+  @include media("<=laptop", ">=tablet") {
+    background-color: $primary;
+  }
+  @include media("<tablet") {
+    background-color: $primary;
+  }
+}
+
+// Navigation styling relevant to the 404, 500, and Individual Blog pages
+nav.layout404Nav,
+nav.layout500Nav,
+nav.theStudyPostNav {
+  box-shadow: 0 1px 1px $grid-border;
+  background-color: #fff;
+  .navButton {
+    color: $primary;
+    border-color: $primary;
+  }
+  & {
+    .navbarToggler .navbarTogglerIcon {
+      background-image: url("../img/icon/nav-toggler-blue.svg");
+      //   @include media("<laptop") {
+      //     background-image: url("../img/icon/nav-toggler.svg");
+      //   }
+    }
+    .logo a {
+      .logoHolder {
+        background-image: url("../img/icon/logo-blue.svg");
+        // @include media("<laptop") {
+        //   background-image: url("../img/icon/logo-white.svg");
+        // }
+      }
+    }
+    .phone > a {
+      display: block;
+      color: $primary;
+      .phoneHolder {
+        /* phone holder and image holder should be refactored to operate the same way/same markup */
+        background-image: url("../img/icon/phone-blue.svg");
+        // @include media(">=laptop") {
+        //   background-image: url("../img/icon/phone-white.svg");
+        // }
+      }
+    }
+  }
+  @include media("<laptop") {
+    &.mainNavbarStuck {
+      .navbarToggler .navbarTogglerIcon {
+        background-image: url("../img/icon/nav-toggler.svg");
+      }
+      .logo a {
+        .logoHolder {
+          background-image: url("../img/icon/logo-white.svg");
+        }
+      }
+    }
+  }
+  .mainLinks li > a {
+    color: $demo-body-text;
+    .active {
+      color: $primary;
+    }
+  }
+  .contactLinks {
+    a {
+      color: $primary;
+    }
+  }
+}
+
+.button {
+  color: #fff;
+  background-color: $primary;
+  text-align: center;
+  font-size: $font-size-btn;
+  transition: 0.4s background-color;
+  &.flat {
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    &.transparent {
+      border: 1px solid;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  &.rounder {
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 80%;
+    color: white;
+    border-radius: 20px;
+  }
+  &.navButton {
+    padding: 8px 7.5%;
+    border: 1px solid;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+  &.transparent {
+    background: none;
+  }
+}
+
+.button:hover {
+  text-decoration: none;
+  color: $primary;
+  background-color: #fff;
+  a {
+    color: $primary !important;
+  }
+}

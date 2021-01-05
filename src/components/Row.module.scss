@@ -1,0 +1,142 @@
+@import "../styles/_site-variables.scss";
+
+$top-padding: 60px;
+$bottom-padding: 30px;
+
+$top-padding-md: 30px;
+$bottom-padding-md: 20px;
+
+.rowStyling {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -37.5px;
+    margin-left: -37.5px;
+    justify-content: center;
+    align-items: center;
+    &.padded {
+      padding-top: $top-padding;
+      padding-bottom: $bottom-padding;
+      &.shortTop {
+        padding-top: 60px * 0.5;
+      }
+      &.tallTop {
+        padding-top: $top-padding * 1.5;
+      }
+      &.shortBottom {
+        padding-bottom: $bottom-padding * 0.5;
+      }
+      &.tallBottom {
+        padding-bottom: $bottom-padding * 2;
+      }
+      @include media("<laptop") {
+        padding-top: $top-padding-md;
+        &.shortTop {
+          padding-top: $top-padding-md * 0.5;
+        }
+        &.tallTop {
+          padding-top: $top-padding-md * 1.5;
+        }
+        padding-bottom: $bottom-padding-md;
+        &.shortBottom {
+          padding-bottom: $bottom-padding-md * 0.5;
+        }
+        &.tallBottom {
+          padding-bottom: $bottom-padding-md * 2;
+        }
+        & > .colMd5 {
+          margin: 20px auto;
+        }
+      }
+    }
+    .img-container {
+      @include media("<=phone") {
+        padding-left: 37.5px !important;
+        padding-right: 37.5px !important;
+      }
+    }
+    &.no-pad,
+    &.pad-0 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    &.md-pad-none {
+      @include media("<laptop") {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    &.sm-pad-none {
+      @include media("<tablet") {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    & > [class*="col-"] {
+      &.no-pad,
+      &.pad-0 {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      &.md-pad-none {
+        @include media("<laptop") {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+      &.sm-pad-none {
+        @include media("<tablet") {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+    @include media("<=phone") {
+      margin-right: -$gutter-xs / 2;
+      margin-left: -$gutter-xs / 2;
+      > [class*="col-"] {
+        padding-right: $gutter-xs / 2;
+        padding-left: $gutter-xs / 2;
+      }
+    }
+    @include media(">phone", "<=tablet") {
+      margin-right: -$gutter-sm / 2;
+      margin-left: -$gutter-sm / 2;
+      > [class*="col-"] {
+        padding-right: $gutter-sm / 2;
+        padding-left: $gutter-sm / 2;
+      }
+    }
+    /* This may prove to be problematic but is attempting to correct for the oversized
+    gutter between half columns, by shifting an extra half the gutter into the row: */
+    /* This solution on rows wont work because the extra padding should only be applied when the row has a .col-6- child, which we can't know here
+    &.thin-middle {
+      @include media("<=tablet") {
+        padding-left: $gutter-sm;
+        padding-right: $gutter-sm;
+        & > .col-sm-6:nth-of-type(odd) {
+          padding-right: $gutter-sm / 4;
+        }
+        & > .col-sm-6:nth-of-type(even) {
+          padding-left: $gutter-sm / 4;
+        }
+      }
+    }*/
+    @include media(">tablet", "<=laptop") {
+      margin-right: -$gutter-md / 2;
+      margin-left: -$gutter-md / 2;
+      > [class*="col-"] {
+        padding-right: $gutter-md / 2;
+        padding-left: $gutter-md / 2;
+      }
+    }
+    @include media(">laptop", "<=desktop") {
+      margin-right: -$gutter-lg / 2;
+      margin-left: -$gutter-lg / 2;
+      > [class*="col-"] {
+        padding-right: $gutter-lg / 2;
+        padding-left: $gutter-lg / 2;
+      }
+    }
+  }
+}

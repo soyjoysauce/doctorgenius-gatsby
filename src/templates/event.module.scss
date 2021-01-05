@@ -1,0 +1,432 @@
+@import "../styles/_site-variables.scss";
+
+.eventDetailPage {
+  .hero {
+    background-position: center 18%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    &:after {
+      display: block;
+      content: "";
+      background: #e7ecf1;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      @include media("<laptop") {
+        height: 0;
+      }
+    }
+    .heroOverlay {
+      height: 690px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 55% 70%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      justify-content: center;
+      position: relative;
+    }
+    h1 {
+      font-size: 71px;
+      font-weight: $font-weight-medium;
+      margin-top: 0;
+      line-height: 0.95;
+    }
+    h2 {
+      font-size: 42px;
+      font-weight: $font-weight-normal;
+      margin-top: 0 !important;
+    }
+    a {
+      font-size: 15px;
+    }
+    .continueEduClass {
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      letter-spacing: 0.6px;
+
+      color: #fff;
+      background-color: $primary;
+      text-align: center;
+      transition: 0.4s background-color;
+
+      text-transform: initial;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: $font-weight-light;
+    }
+    .registerNowBtn {
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      color: #fff;
+      background-color: $demo-button-green;
+      text-align: center;
+      transition: 0.4s background-color;
+    }
+    .registerNowBtn:hover {
+      text-decoration: none;
+    }
+  }
+
+  .eventDetails {
+    h3 {
+      color: $primary;
+      font-size: 45px;
+      font-weight: $font-weight-medium;
+    }
+    p {
+      font-family: $font-family-body-text;
+      font-size: 16px;
+    }
+  }
+
+  .eventDate {
+    .cardText {
+      font-size: 23px;
+      font-family: $font-family-body-text;
+      color: #fff;
+    }
+    .card {
+      width: 482px;
+      min-height: 185px;
+      background-color: #0074cf;
+      margin: auto;
+    }
+    .cardBody {
+      margin-top: 2.5;
+      p {
+        margin-top: $pad / 2;
+      }
+    }
+  }
+
+  .listedItems {
+    align-items: start;
+    h2 {
+      margin-bottom: $pad * 1.5;
+    }
+    h2:nth-of-type(2) {
+      margin-top: $m1 * 2.5;
+    }
+    ul {
+      padding-left: 10px;
+    }
+    li {
+      font-size: 18px;
+      font-weight: $font-weight-normal;
+      font-family: $font-family-body-text;
+      margin: $pad * 1.2;
+    }
+    .contentImage {
+      img {
+        float: right;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .speakerProfiles {
+    justify-content: start;
+    p {
+      font-size: 14px;
+      font-weight: $font-weight-medium;
+      text-align: center;
+      margin-top: $pad;
+    }
+    img {
+      width: 146px;
+    }
+  }
+
+  .dgMarketingSolutions {
+    h2 {
+      text-align: center;
+    }
+    .dgDictionary {
+      padding-top: $m1;
+      h4 {
+        font-size: 23px;
+        color: $primary;
+        font-weight: $font-weight-medium;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 16px;
+        font-family: $font-family-body-text;
+        margin-bottom: $pad;
+      }
+    }
+  }
+
+  .listedItems h2,
+  .speakerDetails h2,
+  .speakerDetails h3,
+  .dgMarketingSolutions h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: $font-weight-medium;
+  }
+
+  /* Styling for Laptop and Above Only */
+  @include media(">=laptop") {
+    .hero {
+      .titles {
+        margin: 10px 0 $m1 * 0.75 0;
+      }
+    }
+    .heroRow {
+      justify-content: flex-start;
+    }
+    .dgDictionary .dictionaryCol:last-child {
+      padding-left: $m1 * 2.5;
+    }
+    .heroOverlay {
+      background-image: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.2) 0,
+        #fff 65%
+      );
+    }
+    .speakerProfiles {
+      .speakerHolder:nth-child(5),
+      .speakerHolder:nth-child(6),
+      .speakerHolder:nth-child(7),
+      .speakerHolder:nth-child(8),
+      .speakerHolder:nth-child(9),
+      .speakerHolder:nth-child(10),
+      .speakerHolder:nth-child(11),
+      .speakerHolder:nth-child(12),
+      .speakerHolder:nth-child(13),
+      .speakerHolder:nth-child(14),
+      .speakerHolder:nth-child(15),
+      .speakerHolder:nth-child(16) {
+        margin-top: 5%;
+      }
+    }
+  }
+
+  @include media(">laptop", "<desktop") {
+    .speakerProfiles {
+      img {
+        width: 110px;
+      }
+    }
+  }
+
+  /* Tablet Styling */
+  @include media("<laptop", ">=tablet") {
+    .hero {
+      .heroOverlay {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      h1 {
+        font-size: 54px;
+        font-weight: $font-weight-medium;
+        margin-top: 0 !important;
+        text-align: center;
+      }
+      h2 {
+        font-size: 31px;
+        font-weight: $font-weight-normal;
+        margin-top: 0 !important;
+        text-align: center;
+      }
+      .registerNowBtnHolder,
+      .continueEduClassHolder {
+        text-align: center;
+        margin: $pad 0;
+      }
+    }
+    .eventDetails {
+      h3,
+      p {
+        text-align: center;
+      }
+    }
+    .eventDate {
+      margin-top: $pad * 2;
+    }
+    .listedItems {
+      h2:nth-of-type(2) {
+        margin-top: $m1 * 1.5;
+      }
+    }
+    .speakerDetails {
+      h2,
+      h3 {
+        text-align: center;
+      }
+      h3 {
+        margin-bottom: $m1;
+      }
+    }
+    .speakerHolder {
+      margin-bottom: $m1 * 1.5;
+    }
+  }
+
+  /* Styling for Mobile */
+  @include media("<tablet") {
+    .hero {
+      .heroOverlay {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      h1 {
+        font-size: 33px;
+        font-weight: $font-weight-medium;
+        margin-top: 0 !important;
+        text-align: center;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: $font-weight-normal;
+        margin-top: 0 !important;
+        text-align: center;
+      }
+      .registerNowBtnHolder,
+      .continueEduClassHolder {
+        text-align: center;
+        margin: $pad * 2 0;
+      }
+    }
+    .eventDetails {
+      h3,
+      p {
+        text-align: center;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    .eventDate {
+      .card {
+        width: 311px;
+        min-height: 121px;
+        height: auto;
+        margin-top: $pad;
+      }
+      .cardText {
+        font-size: 16px;
+      }
+      .cardBody {
+        margin-top: 0;
+        p {
+          margin: $pad / 2;
+        }
+      }
+    }
+    .listedItems {
+      h2 {
+        font-size: 36px;
+        text-align: center;
+      }
+      li {
+        font-size: 16px;
+      }
+      h2:nth-of-type(2) {
+        margin-top: $m1 * 1.2;
+      }
+    }
+    .speakerDetails {
+      h2,
+      h3 {
+        text-align: center;
+      }
+      h3 {
+        margin-bottom: $pad * 1.5;
+      }
+      .speakerHolder:not(:last-child) {
+        margin-bottom: $m1;
+      }
+      .speakerHolder:last-child {
+        margin-bottom: $m1 / 2;
+      }
+    }
+  }
+
+  @include media("<phone") {
+    .cardText {
+      text-align: center;
+    }
+    .date320 {
+      padding: 0;
+    }
+    .eventDate {
+      .card {
+        width: 100vw;
+      }
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1045px) {
+    .cardBody {
+      padding-left: 3%;
+    }
+  }
+
+  @media (min-width: 425px) and (max-width: 425px) {
+    .eventDate {
+      .card {
+        width: initial;
+        height: initial;
+      }
+    }
+  }
+
+  .spacer {
+    height: 2px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    &.solid {
+      background: $mute;
+      opacity: 0.25;
+    }
+    &.small {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .whiteText {
+    color: white;
+  }
+
+  .button {
+    color: #fff;
+    background-color: $primary;
+    text-align: center;
+    font-size: $font-size-btn;
+    transition: 0.4s background-color;
+    &.flat {
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      &.transparent {
+        border: 1px solid;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  .button:hover {
+    text-decoration: none;
+    color: $primary-text;
+    background-color: $button-hover-green;
+  }
+}

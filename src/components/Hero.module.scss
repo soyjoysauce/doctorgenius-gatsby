@@ -1,0 +1,300 @@
+@import "../styles/_site-variables.scss";
+
+.hero {
+  height: 690px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 55% 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  .accentBlock {
+    h1 {
+      font-size: $h1-font-size;
+      font-weight: $font-weight-medium;
+    }
+    h2 {
+      @include fluid-type(
+        34px,
+        45px,
+        $tablet,
+        $laptop
+      ); /* desktop - 53, tablet - 45, small - 38 */
+      @include heading-font;
+    }
+    p {
+      @include fluid-type(1.0625rem, 1.1875rem, $phone, $tablet); /* 19 - 17 */
+      font-family: "Agenda";
+      line-height: 1.4;
+      font-weight: $font-weight-light;
+      @include media("<laptop") {
+        line-height: 1.1;
+      }
+    }
+  }
+
+  @include media("<laptop") {
+    height: 480px;
+  }
+
+  .heroContent {
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      @include media("<laptop") {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+    @include media(">=tablet") {
+      .accentedParagraph p {
+        &:before {
+          height: 48px;
+          width: 5px;
+          background: #005a91;
+        }
+      }
+    }
+    @include media("<tablet") {
+      margin-top: 5%;
+      .accentedParagraph {
+        margin-left: 0;
+        p {
+          &:before {
+            height: 0;
+          }
+        }
+      }
+    }
+    @include media("<=laptop") {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include media("<=tablet") {
+      width: 400px;
+      height: auto;
+    }
+    @include media("<=425px") {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.hero:after {
+  display: block;
+  content: "";
+  background: #e7ecf1;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  @include media("<laptop") {
+    height: 0;
+  }
+}
+
+.hero.baa {
+  .accentedParagraph {
+    p {
+      color: white;
+    }
+  }
+  .accentBlock {
+    width: 470px;
+    height: 271px;
+    @include media("<=tablet") {
+      width: 400px;
+    }
+  }
+}
+
+.hero.caseStudy {
+  .accentBlock {
+    @include media(">=tablet") {
+      width: 470px;
+      height: 271px;
+    }
+    h2 {
+      @include fluid-type(38px, 45px, $phone, $desktop);
+      @include media(">=tablet") {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.hero.company {
+  h2 {
+    margin-bottom: 20px;
+  }
+  .heroContent {
+    @include media(">=tablet") {
+      width: 514px;
+      height: 280px;
+      margin-top: 90px;
+    }
+  }
+}
+
+.hero.ecAup {
+  .accentedParagraph {
+    p {
+      color: white;
+    }
+  }
+  .accentBlock {
+    width: 535px;
+    height: 271px;
+    @include media("<=tablet") {
+      width: 400px;
+    }
+  }
+}
+
+.hero.marketingSolutions {
+  @include media("<=tablet") {
+    background-position: 84% 50%;
+  }
+  .heroContent {
+    @include media(">=tablet") {
+      width: 490px;
+      height: 295px;
+      p {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.hero.partnerships {
+  h2 {
+    margin-bottom: 20px;
+  }
+  .heroContent {
+    @include media(">=tablet") {
+      width: 490px;
+      height: 300px;
+    }
+  }
+}
+
+.hero.plans {
+  background-position: center 18%;
+  height: 650px;
+  .heroContent {
+    width: 625px;
+    height: 344px;
+    padding: 2.8rem;
+    p {
+      width: 85%;
+    }
+    @include media("<laptop") {
+      width: 400px;
+      height: auto;
+      padding: 1.5rem;
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.hero.privacyPolicy,
+.hero.websiteDevelopmentTerms {
+  .heroContent {
+    flex: 0 0 50%;
+    width: 50%;
+    @include media("<tablet") {
+      width: 100%;
+    }
+  }
+  .accentedParagraph p {
+    color: $primary-text;
+  }
+}
+
+.hero.termsOfService {
+  .accentedParagraph {
+    p {
+      color: white;
+    }
+  }
+  .heroContent {
+    @include media(">tablet") {
+      margin-top: 50px;
+      width: 630px;
+      height: 240px;
+    }
+  }
+}
+
+.hero.marketingSolutionsInner {
+  .heroContent {
+    @include media(">=tablet") {
+      width: 492px;
+      height: 330px;
+      p {
+        width: 90%;
+      }
+    }
+    @include media("<=laptop") {
+      height: auto;
+      h2 {
+        margin-bottom: 15px;
+      }
+    }
+    @include media("<=tablet") {
+      height: auto;
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.hero.ourClientsInner {
+  .heroContent {
+    @include media(">tablet") {
+      margin-top: 50px;
+      width: 630px;
+      height: 330px;
+    }
+    @include media("<=laptop") {
+      height: auto;
+      h2 {
+        margin-bottom: 15px;
+      }
+    }
+    @include media("<=tablet") {
+      width: 400px;
+      height: auto;
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  h1 {
+    padding: 2px 12px;
+  }
+  .accentedParagraph {
+    width: 100%;
+  }
+}
+
+.hero.theStudyPagination {
+  .heroContent {
+    @include media(">=tablet") {
+      width: 465px;
+      height: 290px;
+    }
+    h2 {
+      @include fluid-type(40px, 90px, $phone, $desktop);
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+  }
+}

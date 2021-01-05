@@ -1,0 +1,279 @@
+//@import url("https://use.typekit.net/xmg2hgf.css");
+@import "_agenda-font.css";
+
+//@import "_include-media";
+@import "_site-variables.scss";
+@import "~bootstrap/scss/functions";
+@import "_bootstrap-variables-customized.scss";
+
+@import "_fluid-font-sizes.scss";
+
+/* Overrides default Bootstrap grid gutters at specified breakpoints */
+//@import "_responsive_grid_gutter.scss";
+
+/* I'd like to move these into the component, but I can't get it working */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* --------- Remaining from _page-layout.scss - Positioning elements and general page structure --------- */
+body {
+  overflow-y: auto; /* Allows 100vw to not include scrollbars */
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html .hero {
+  &.shift-down {
+    margin-bottom: 190px;
+    @include media("<laptop") {
+      margin-bottom: 0;
+    }
+  }
+}
+.full-bleed-wrapper {
+  position: relative;
+  .full-bleed-content-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    &:not(.flipped) {
+      transform: translateX(-50%);
+    }
+    &.flipped {
+      transform: translateX(-50%) scaleX(-1);
+      filter: FlipH;
+    }
+  }
+}
+
+.col-xl-6 {
+  img {
+    width: 100%;
+  }
+}
+
+.full-bleed-wrapper {
+  @include media("<laptop") {
+    padding: 0 !important;
+  }
+}
+/* --------------------------- End of _page-layout.scss --------------------------- */
+
+/* --------- Remaining from _components.scss - Reusable content pieces which will probably be <Components> --------- */
+.slick-dots li.slick-active button:before {
+  color: $primary;
+}
+
+.accent-block {
+  padding: 2rem;
+  color: $primary-text;
+  h1 {
+    background: $secondary;
+    display: inline-block;
+    padding: 5px 15px;
+  }
+}
+
+.accented-paragraph {
+  margin-left: 15px;
+  p {
+    margin-bottom: 1rem;
+    &.medium-width {
+      /* this may be better suited for a column, just a test */
+      width: 80%;
+    }
+    &:first-of-type {
+      position: relative;
+      &:before {
+        width: 3px;
+        margin-left: -15px;
+        margin-top: 0.25rem;
+        line-height: 1rem;
+        height: 3rem;
+        content: "";
+        display: inline-block;
+        position: absolute;
+      }
+    }
+  }
+}
+@for $headingNum from 1 through 6 {
+  h#{$headingNum} {
+    margin-bottom: $content-block-heading-margin;
+  }
+}
+/* --------------------------- End of remaining _components.scss --------------------------- */
+
+/* --------- Remaining from _background.scss - Anything with the solid background. Color rules only --------- */
+.accented-paragraph p:before {
+  background-color: $primary;
+}
+.accent-block {
+  background: linear-gradient(
+    45deg,
+    rgba(#0b97c1, 0.95) 0%,
+    rgba(#0074cf, 0.95) 100%
+  );
+}
+
+.full-bleed {
+  .full-bleed-image {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+  .full-bleed-slider {
+    width: 100%;
+  }
+}
+
+.full-bleed {
+  .full-bleed-content-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.full-bleed-image-row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  .full-bleed-img {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+/* --------------------------- End of remaining _background.scss --------------------------- */
+
+/* --------- Remaining from _text.scss - Colors and fonts - font-size, font-family, color --------- */
+/* Standard font sizes, families, and weights */
+html {
+  body {
+    font-family: $font-family-base;
+    font-size: $font-size-normal-text;
+  }
+}
+
+/* Headings */
+@for $headingNum from 1 through 6 {
+  h#{$headingNum} {
+    letter-spacing: -0.5px;
+  }
+  h#{$headingNum}:not(.m-0) {
+    /* margin-bottom: $content-block-heading-margin;*/
+  }
+}
+
+/* Link With Icon */
+.link-with-icon {
+  color: $primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+}
+
+//Standard Accented Paragraphs
+.accented-paragraph {
+  p {
+    @include accented-paragraph-font;
+    font-size: 14px;
+    //@include fluid-type(14px, 17px, $phone, $tablet);
+  }
+}
+
+.accent-block {
+  color: $primary-text;
+}
+/* --------------------------- End of remaining from _text.scss --------------------------- */
+
+/* --------------------------- Remaining of _helpers.scss --------------------------- */
+.center {
+  text-align: center;
+}
+
+/* Utility padding classes applied to inner elements, like link-with-icon. Not for rows */
+.pad-sm {
+  padding: $pad;
+}
+.pad-md {
+  padding: $pad * 2;
+}
+.pad-lg {
+  padding: $pad * 3;
+}
+.pad-xl {
+  padding: $pad * 4;
+}
+
+/* Paragraph content needs more flexibility */
+p {
+  @include media(">=desktop") {
+    &.l-thin {
+      /* these class name aren't the best */
+      width: 50%;
+    }
+    &.m-thin {
+      width: 66%;
+    }
+    &.s-thin {
+      width: 75%;
+    }
+  }
+  @include media("<desktop") {
+    &.l-thin,
+    &.m-thin,
+    &.s-thin {
+      width: 100%;
+    }
+  }
+}
+
+/* --------------------------- End of remaining _helpers.scss --------------------------- */
+
+/* ----------------------------- Start of bootstrap imports ----------------------------- */
+
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+//@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+/* ------------------------------ End of bootstrap imports ------------------------------ */
+
+/* Undoing reboot */
+p {
+  margin-bottom: 0;
+}

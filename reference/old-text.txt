@@ -1,0 +1,19 @@
+/* Text types:
+
+Headings (inner title)
+same faily
+vary size (based on h* + homepage vs non-homepage,
+    h2: 45
+    subtitle: 29
+    strapline 20 (blue)
+    h3: 40
+    subtitle:
+    strapline: 14 (blue)
+
+
+
+Paragragh (accented paragraph): 17 (home), 16 (non-home)
+"Callout" (blue, bold, suually numbers, larger fontsize)
+"Detail" (different font, thinner line-height, thinner kerning) (like the table in our-clients)
+
+*/

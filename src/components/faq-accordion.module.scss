@@ -1,0 +1,160 @@
+@import "../styles/_site-variables.scss";
+
+.faqWrapper {
+  height: auto;
+}
+.faq {
+  img {
+    transition: 0.5s;
+  }
+  .answer {
+    height: auto;
+  }
+  overflow: hidden;
+  &.open {
+    .answer {
+      transition: max-height 1s ease-in-out;
+      max-height: 500px;
+    }
+    img {
+      transform: none;
+    }
+  }
+  &.closed {
+    .answer {
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0px;
+    }
+    img {
+      transform: rotate(-180deg);
+    }
+  }
+}
+.accordionTarget {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  & > * {
+    display: block;
+  }
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+.accordionTargetRemove {
+  height: 25px;
+  width: 25px;
+  position: relative;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+}
+.accordionTargetRemove::before,
+.accordionTargetRemove::after {
+  content: "";
+  display: block;
+  height: 5%;
+  width: 85%;
+  position: absolute;
+  top: 37%;
+  left: 8%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: black;
+}
+.accordionTargetRemove::before {
+  transform: rotate(45deg);
+}
+.accordionTargetRemove::after {
+  transform: rotate(-45deg);
+}
+.accordionTargetRemoveChevronDown.accordionTargetTransform::before {
+  left: 0%;
+  transform: rotate(-135deg);
+  width: 59%;
+}
+
+.accordionTargetRemoveChevronDown.accordionTargetTransform::after {
+  left: auto;
+  right: 0%;
+  transform: rotate(135deg);
+  width: 60%;
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyHidden:active,
+.visuallyHidden:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.faqHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faqHeader,
+.answer,
+.question {
+  width: 100%;
+}
+.faqHeader,
+.answer {
+  border-bottom: 1px solid #e7e7e7;
+}
+dt p {
+  font-size: 18px; /* this section needs to inherit font from somewhere */
+  font-weight: normal;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  //font-family: $font-family-body-text;
+}
+dd {
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
+  margin-bottom: 0;
+  font-size: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

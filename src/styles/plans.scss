@@ -1,0 +1,21 @@
+@import "_site-variables.scss";
+
+// Plans Grid
+$font-size-plans-row-heading: $font-size-base * 0.8125;
+
+.plans {
+  .plans-table {
+    .column-signup {
+      p.column-signup-body {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      a {
+        &.subtle-link {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

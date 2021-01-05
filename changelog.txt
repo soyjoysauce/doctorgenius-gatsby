@@ -1,0 +1,15 @@
+----- Change Log -----
+
+[2019-6-25] v1.0.2
+- Author images added to some Testimonials
+- new 500 "Server Error" page
+- Contact Form UX Improvements
+
+[2019-6-24] v1.0.1 (Initial Launch version)
+- Copy Updates
+- Google Tag Manager incorporated (User visits only for now)
+- Simple 404 page will show on any unmatched URLs
+- Email server changed to new one on dgplex
+- [Bugfix] Top nav bar always displays now
+- [Bugfix] Swiping right no longer breaks layout
+- [Bugfix] Testimonials slider: Better responsive layout

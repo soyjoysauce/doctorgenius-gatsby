@@ -1,0 +1,12 @@
+@import "_site-variables.scss";
+.demo {
+  /* This is all awful and is just a hack */
+  header {
+    height: 80px !important;
+  }
+
+  header {
+    background: $primary;
+    box-shadow: 0 1px 1px #e0e0e0;
+  }
+}

@@ -1,0 +1,116 @@
+Components                                  CSS Selector/html5 element
+
+Page Layout:
+    header                                  header
+        navigation                          nav
+        subheader (dropdown nav)
+        page-title                          h1
+    footer                                  footer
+
+
+_Reusable:_
+
+container                                   div.container
+    home-page slightly wider                body.home div.container
+
+row                                         div.row
+    graphic                                 div.row div.full-bleed
+
+columns structure   div.col
+    1 column
+    2 columns
+    4 columns
+
+
+maincontent area:                           div.main-content
+    container
+    patterned-squares background
+
+
+full-bleed                                  row.full-bleed
+    takes slider
+    slanted background
+    supports background graphic
+
+
+ContentBlock                                div.content-block
+    innertitle
+    content/paragraph/accentedparagraph/Our Clients Custom table
+    link
+    alignment
+
+
+cards-slider                                div.cards-slider
+    card
+    sliding functionality
+    take variable # of cards
+    dot-styled indications/navigation
+        current slide accented color
+
+card                                        div.card
+    image
+    icon
+    paragraph block
+        acented name/title
+        body font colored title
+
+
+
+logo                                        img.logo / div.logo { background-image }
+    header
+    in-content
+
+accented paragraph      p.accented
+
+Button                                      a.button
+    rounder Button                          a.button.rounder
+    Slightly rounded, flat sides button     a.button.flat
+    link                                    a.button
+    icon                                    a.button img/svg/i
+    subtle-link (grey underlined)           a.subtle-link
+
+
+
+inner-title:                                div.inner-title
+    h2-h4                                   div.inner-title h2(-h4)
+    accented span                           div.inner-title h2 .span
+    segmented underline                     div.inner-title h2.underline:after
+    supports strapline above                div.inner-title div.strapline (maybe div.inner-title p.strapline)
+    or subtitle below                       div.inner-title div.subtitle
+    center                                  div.inner-title.center
+
+Strapline                                   .strapline
+    accented color
+    smaller font
+
+spacer div                                  div.spacer
+    sizes (in ems)                          div.spacer.small/.medium/.large (?)
+    with optional hr                        div.spacer.solid
+    slightly less than 100% wider           div.spacer.trim
+
+panel                                      row.panel-row div.panel (Aligns columns containing panels to the row flex-start)
+    image/icon                             div.panel img
+    heading: bold/                         div.panel .inner-title
+    copy                                   div.panel p / div.panel p.accented
+    outline?
+
+callout                                     div.callout
+    accented title
+    large callouttext
+    paragraph block/set of callout text
+    link w icon
+
+    <div className="callout">
+        <h2 className="inner-title">
+        <p className="heading">
+        <p className="blue-test">New Patient Inquiries</p> p:first {} p + p {}
+        <p>12 Months Duration</p>
+
+link w icon
+
+
+_nonreusable Page Content_
+homepage-slanted-image-conatiner
+Our Clients - Case Study table
+Plans Page - Features table/grid
+Plans Page - FAQ Collapsible

@@ -1,0 +1,239 @@
+@import "../styles/_site-variables.scss";
+
+// Plans Grid
+$font-size-plans-row-heading: $font-size-base * 0.8125;
+
+.plansPage {
+  /* Styles unique to this page component */
+  .imageRow {
+    .backgroundHolder {
+      width: 100%;
+      height: 100%;
+      background: url("../img/plans-table-header-image.svg") no-repeat
+        center/contain;
+      @include media("<tablet") {
+        display: none;
+      }
+    }
+    p {
+      display: none;
+      @include media("<tablet") {
+        display: block;
+      }
+    }
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      @include media("<desktop") {
+        padding: 2%;
+      }
+      @include media("<tablet") {
+        display: none;
+      }
+    }
+  }
+  .plansTable.noBg {
+    background: transparent;
+    box-shadow: none;
+    grid-template-rows: 120px;
+    @include media("<tablet") {
+      display: none;
+    }
+    .gridItem {
+      padding: 0px !important;
+      justify-content: center !important;
+      .button {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .plansTable {
+    background: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: 1fr 260px 260px 260px;
+    grid-template-rows: 275px repeat(41, 50px);
+    box-shadow: 0 3px 6px #e1e1e1;
+    font-family: $font-family-body-text;
+    @include media("<desktop") {
+      /* grid items:
+        229x49 180x49 180x49 180x49 = 769
+        29.77%  23.407% 23.407% 23.407%
+  
+        */
+      max-width: 100%;
+      grid-template-columns: 1fr 23.407% 23.407% 23.407%;
+      grid-template-rows: 200px repeat(43, 50px);
+      margin-right: 0;
+      margin-left: 0;
+    }
+    @include media("<tablet") {
+      grid-template-rows: 45px repeat(43, 50px);
+    }
+    .spacerRow {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      flex-direction: row;
+      background: #f6f6f6;
+      border-left: 1px solid $grid-border;
+      border-bottom: 1px solid $grid-border;
+      border-right: 1px solid $grid-border;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* First Column and Spacer Rows */
+    .gridItem:nth-of-type(4n + 1),
+    .spacerRow {
+      padding-left: 30px;
+      justify-content: flex-start;
+      @include media("<650px") {
+        padding-left: 10px;
+      }
+    }
+    .gridItem {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p,
+      h2 {
+        margin-bottom: 0;
+        line-height: 1em;
+      }
+      p {
+        color: $subtle-link;
+        font-size: 12px;
+      }
+      .recommended {
+        background-color: $recommended-green;
+        transition: 0.4s background-color;
+        font-weight: $font-weight-medium;
+        text-align: center;
+        text-transform: uppercase;
+        justify-self: flex-start;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: white;
+        border-radius: 20px;
+        font-size: 10px;
+        width: 40%;
+        position: absolute;
+        top: 30px;
+        @include media("<desktop") {
+          width: 60%;
+        }
+        @include media("<tablet") {
+          display: none;
+        }
+      }
+      .button {
+        color: #fff;
+        background-color: $primary;
+        text-align: center;
+        font-size: $font-size-btn;
+        transition: 0.4s background-color;
+        &.rounder {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 80%;
+          color: white;
+          border-radius: 20px;
+        }
+      }
+
+      .button:hover {
+        text-decoration: none;
+        color: $primary-text;
+        background-color: $button-hover-green;
+      }
+    }
+    .gridItem:first-of-type {
+      padding: 20px !important;
+      @include media("<tablet") {
+        padding: 0% !important;
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+      }
+    }
+    .gridItem:not(:nth-of-type(n + 5)) {
+      border-top: 1px solid $grid-border;
+      border-bottom: 1px solid $grid-border;
+      padding: 95px 35px 85px 35px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @include media("<desktop") {
+        padding: 75px 15px 50px;
+      }
+      @include media("<tablet") {
+        padding: 0;
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+      }
+    }
+    /* First column */
+    .gridItem:nth-of-type(4n + 1) {
+      border-left: 1px solid $grid-border;
+      justify-content: flex-start;
+    }
+    /* All */
+    .gridItem:nth-of-type(n) {
+      border-right: 1px solid $grid-border;
+    }
+    /* All but First Row */
+    .gridItem:nth-of-type(n + 4) {
+      border-right: 1px solid $grid-border;
+      border-bottom: 1px solid $grid-border;
+    }
+    /* Last Row */
+    .gridItem:nth-last-of-type(1),
+    .gridItem:nth-last-of-type(2),
+    .gridItem:nth-last-of-type(3),
+    .gridItem:nth-last-of-type(4) {
+      border: none;
+    }
+    .columnSignup {
+      .gridItem:not(.plansRowTitle) {
+        font-weight: $font-weight-bold;
+      }
+      h2 {
+        font-weight: $font-weight-bold;
+        font-size: 23px;
+      }
+      a.button {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-btn;
+        @include media("<tablet") {
+          display: none;
+        }
+      }
+      a.button:hover {
+        background-color: $button-hover-blue;
+      }
+    }
+    .gridItem,
+    .plansRowTitle {
+      font-size: $font-size-plans-row-heading;
+      @include media("<tablet") {
+        line-height: 1;
+      }
+      @include media("<tablet") {
+        @include fluid-type(9px, 12px, $phone, $tablet);
+        h2 {
+          @include fluid-type(9px, 23px, $phone, $tablet);
+        }
+      }
+    }
+  }
+  .subtleLink {
+    color: $subtle-link;
+    text-decoration: underline;
+  }
+}

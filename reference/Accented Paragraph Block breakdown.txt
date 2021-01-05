@@ -1,0 +1,22 @@
+<ParagraphWithHeading
+    alignment="left"/middle
+    accented="true"
+>
+    <InnerTitle ( alignment )
+
+    >
+        <Strapline>
+            <Icon>
+            <h3></h3>
+        </Strapline>
+        <Heading>
+            <h2></h2>
+            <Underline>
+        </Heading>
+    </InnerTitle>
+    </AccentedTitle>
+
+    <AccentedParagraphBlock (accented)
+
+    >
+</ParagraphWithHeading>

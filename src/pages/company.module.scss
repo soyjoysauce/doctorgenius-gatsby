@@ -1,0 +1,147 @@
+@import "../styles/_site-variables.scss";
+
+.companyPage {
+  /* Styles unique to this page component */
+  .letsTalkPartnership > div {
+    margin-top: 50px;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px calc(17.5px / 2); /* difference between bootstrap col-4 width and design panel width */
+    @include media("<=laptop") {
+      margin: 20px auto 40px;
+    }
+
+    .panelHeading {
+      color: $primary;
+      margin: 5px 0;
+      @include fluid-type(
+        $panel-heading-font-size * 0.85,
+        $panel-heading-font-size,
+        $laptop,
+        $desktop
+      );
+      font-family: $font-family-inner-block-headings;
+      font-weight: $font-weight-bold;
+      @include media("<=laptop") {
+        font-size: 24px;
+        margin: 5px 0;
+      }
+    }
+
+    .panelBody {
+      font-size: $font-size-lg;
+      color: $mute-text-darker;
+      line-height: 1.2;
+      @include media("<=laptop") {
+        font-size: 14px;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    .iconWrapper {
+      height: 67px;
+      width: 103px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .imgIcon {
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .panelRow {
+    align-items: flex-start;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .fontWeightSemibold {
+    font-weight: $font-weight-semibold;
+  }
+  /* Link With Icon */
+  .linkWithIcon {
+    color: $primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+
+  .accentedParagraph {
+    .linkWithIcon {
+      margin-top: 40px;
+    }
+  }
+  .linkIcon {
+    margin-right: 10px;
+  }
+
+  .callout {
+    font-weight: $font-weight-bold;
+    .calloutHeading {
+      color: $primary;
+      font-size: $callout-heading-font-size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      sup {
+        line-height: 1;
+        margin-right: 5px;
+      }
+      p {
+        font-size: 5.3125rem;
+        font-family: $font-family-inner-block-headings;
+      }
+    }
+    /*> p {
+        color: $mute;
+      } */
+    p {
+      &.textAccent {
+        font-size: 1.6875rem;
+        font-weight: $font-weight-normal;
+        letter-spacing: -0.75px;
+        color: #047bc7;
+      }
+      &.subTextAccent {
+        color: $mute;
+        font-size: 1.625rem;
+        font-family: $font-family-inner-block-subtext;
+        font-weight: $font-weight-medium;
+        letter-spacing: -0.25px;
+      }
+    }
+    sup {
+      text-transform: uppercase;
+      font-size: $font-size-normal-text;
+      line-height: 1.2;
+    }
+
+    .calloutLink {
+      font-size: 0.8125rem;
+      font-weight: $font-weight-semibold;
+    }
+    .calloutLink > a {
+      color: $primary;
+    }
+  }
+  .imgResponsive {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+  }
+}

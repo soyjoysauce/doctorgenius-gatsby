@@ -1,0 +1,35 @@
+@import "../styles/_site-variables.scss";
+
+.marketingSolutionsInnerPage {
+  .iconStrapline {
+    img {
+      max-width: 25px;
+    }
+    p {
+      color: $primary;
+      display: inline;
+      font-family: "Roboto";
+      font-weight: $font-weight-bold;
+      font-size: $font-size-sm;
+    }
+    & + .innerTitle {
+      h2 {
+        margin-bottom: 10px;
+      }
+      & + .accentedParagraph p {
+        color: #797979;
+      }
+    }
+  }
+
+  .imgResponsive {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    margin-bottom: $m1 * 1.5;
+  }
+
+  .linkIcon {
+    margin-right: 10px;
+  }
+}

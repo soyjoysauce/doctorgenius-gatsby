@@ -1,0 +1,65 @@
+@import "_site-variables.scss";
+
+.our-clients {
+  .hero {
+    .accented-paragraph {
+      width: 84%;
+    }
+  }
+  .hero-content {
+    @include media(">=tablet") {
+      margin-top: 50px;
+      width: 630px;
+      height: 330px;
+    }
+    h1 {
+      padding: 2px 12px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    .accented-paragraph {
+      width: 100%;
+    }
+  }
+  .thin-heading {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .content-block .accented-paragraph p {
+    margin-bottom: 2rem;
+  }
+  .case-study-container {
+    h3 {
+      font-size: $h2-font-size-main;
+    }
+  }
+  .case-study-table {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(3, 100px);
+  }
+  .case-study-item {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    /* There has to be a better way to do these css grid inline borders */
+    &:nth-child(odd) {
+      border-right: 1px solid #dfdfdf;
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      border-bottom: 1px solid #dfdfdf;
+    }
+  }
+  .check-plans-background-image {
+    height: 475px;
+    background-position: 40%;
+  }
+}

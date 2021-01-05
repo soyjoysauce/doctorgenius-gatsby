@@ -1,0 +1,29 @@
+@import "../styles/_site-variables.scss";
+
+/* Placeholder values and colors and pattern */
+.mainContent {
+  position: relative;
+  padding-bottom: 40px;
+
+  background: top/300px repeat-x url(../img/background-texture.png),
+    center 50%/300px repeat-x url(../img/background-texture-flipped.png),
+    center calc(50% + 300px) / 300px repeat-x url(../img/background-texture.png),
+    bottom/300px repeat-x url(../img/background-texture-flipped.png);
+
+  &:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.65);
+  }
+  /* 
+  padding: 50px 0;
+  background-color: #9db8cc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%239db8cc' width='11' height='11'/%3E%3Crect fill='%239eb9cc' x='10' width='11' height='11'/%3E%3Crect fill='%23a0bacd' y='10' width='11' height='11'/%3E%3Crect fill='%23a1bacd' x='20' width='11' height='11'/%3E%3Crect fill='%23a3bbce' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%23a4bcce' y='20' width='11' height='11'/%3E%3Crect fill='%23a5bdcf' x='30' width='11' height='11'/%3E%3Crect fill='%23a7bdcf' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%23a8bed0' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%23aabfd0' y='30' width='11' height='11'/%3E%3Crect fill='%23abc0d1' x='40' width='11' height='11'/%3E%3Crect fill='%23acc1d1' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23aec1d2' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23afc2d2' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23b1c3d3' y='40' width='11' height='11'/%3E%3Crect fill='%23b2c4d3' x='50' width='11' height='11'/%3E%3Crect fill='%23b3c5d4' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%23b5c5d4' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23b6c6d5' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23b7c7d5' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23b9c8d5' y='50' width='11' height='11'/%3E%3Crect fill='%23bac9d6' x='60' width='11' height='11'/%3E%3Crect fill='%23bcc9d6' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23bdcad7' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23becbd7' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23c0ccd8' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23c1ccd8' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23c2cdd9' x='70' width='11' height='11'/%3E%3Crect fill='%23c4ced9' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23c5cfda' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23c7d0da' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23c8d0db' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23c9d1db' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23cbd2dc' x='80' width='11' height='11'/%3E%3Crect fill='%23ccd3dc' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%23cdd4dd' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%23cfd4dd' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%23d0d5de' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%23d1d6de' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%23d3d7de' x='90' width='11' height='11'/%3E%3Crect fill='%23d4d8df' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23d6d8df' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23d7d9e0' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23d8dae0' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23dadbe1' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23dbdce1' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23dcdce2' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23dedde2' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23dfdee3' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23e0dfe3' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23e2e0e4' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23e3e1e4' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23e5e1e5' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23e6e2e5' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23e7e3e6' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23e9e4e6' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23eae5e7' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%23ebe5e7' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23ede6e8' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23eee7e8' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover; 
+  */
+}

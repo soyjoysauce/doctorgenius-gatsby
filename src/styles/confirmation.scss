@@ -1,0 +1,69 @@
+@import "_site-variables.scss";
+
+.confirmation {
+  @include media(">=laptop") {
+    // ----------- NAVIGATION STYLING (DESKTOP) -----------
+    header .logo a .logo-holder {
+      background-image: url("../img/icon/logo-blue.svg");
+    }
+    nav .main-links a,
+    nav .contact-links a,
+    header nav.navbar.main-navbar-stuck a {
+      color: $primary;
+    }
+    header .phone > a .phone-holder {
+      background-image: url("../img/phone-blue.svg");
+    }
+    .button.nav-button {
+      border: 1px solid $primary;
+    }
+    nav.main-navbar-stuck .free-demo-button a {
+      color: #fff !important;
+    }
+    nav.main-navbar-stuck .free-demo-button {
+      background-color: $primary;
+    }
+    header .dropdown-row a {
+      color: $primary-text !important;
+    }
+
+    nav.main-navbar-stuck .button.nav-button.free-demo-button:hover {
+      color: $primary !important;
+      background-color: $primary-text !important;
+    }
+
+    nav.main-navbar-stuck .button.nav-button.free-demo-button a:hover {
+      color: $primary !important;
+    }
+    .button.nav-button.free-demo-button:hover {
+      background-color: $primary !important;
+      border-color: $primary !important;
+    }
+    .button.nav-button.free-demo-button:hover a {
+      color: #fff !important;
+    }
+    // ----------- END NAVIGATION STYLING (DESKTOP) -----------
+  }
+
+  @include media("<=laptop", ">=tablet") {
+    // ----------- NAVIGATION STYLING (TABLET) -----------
+    .navigation-wrapper {
+      background-color: $primary;
+    }
+    header .logo a .logo-holder {
+      background-image: url("../img/icon/logo-white.svg");
+    }
+    // ----------- END NAVIGATION STYLING (TABLET) -----------
+  }
+
+  @include media("<tablet") {
+    // ----------- NAVIGATION STYLING (MOBILE) -----------
+    .navigation-wrapper {
+      background-color: $primary;
+    }
+    header .logo a .logo-holder {
+      background-image: url("../img/icon/logo-white.svg");
+    }
+    // ----------- END NAVIGATION STYLING (MOBILE) -----------
+  }
+}

@@ -1,0 +1,90 @@
+@import "_site-variables.scss";
+/* Adding globally for now, this will need to be incorporated into the new CSS system on merge */
+.event-listing {
+  .cta-btns {
+    display: flex;
+  }
+  @include media(">=laptop") {
+    justify-content: space-between;
+  }
+  @include media("<laptop") {
+    .hero-overlay {
+      background-image: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.2) 0,
+        #fff 85%
+      );
+    }
+    .cta-btns {
+      justify-content: center;
+    }
+  }
+}
+
+.event-listing {
+  @include media(">=laptop") {
+    // ----------- NAVIGATION STYLING (DESKTOP) -----------
+    header .logo a .logo-holder {
+      background-image: url("../img/icon/logo-blue.svg");
+    }
+    nav .main-links a,
+    nav .contact-links a,
+    header nav.navbar.main-navbar-stuck a {
+      color: $primary;
+    }
+    header .phone > a .phone-holder {
+      background-image: url("../img/phone-blue.svg");
+    }
+    .button.nav-button {
+      border: 1px solid $primary;
+    }
+    nav.main-navbar-stuck .free-demo-button a {
+      color: #fff !important;
+    }
+    nav.main-navbar-stuck .free-demo-button {
+      background-color: $primary;
+    }
+    header .dropdown-row a {
+      color: $primary-text !important;
+    }
+
+    nav.main-navbar-stuck .button.nav-button.free-demo-button:hover {
+      color: $primary !important;
+      background-color: $primary-text !important;
+    }
+
+    nav.main-navbar-stuck .button.nav-button.free-demo-button a:hover {
+      color: $primary !important;
+    }
+    .button.nav-button.free-demo-button:hover {
+      background-color: $primary !important;
+      border-color: $primary !important;
+    }
+    .button.nav-button.free-demo-button:hover a {
+      color: #fff !important;
+    }
+    // ----------- NAVIGATION STYLING (DESKTOP) END -----------
+  }
+
+  @include media(">=tablet", "<laptop") {
+    // ----------- NAVIGATION STYLING (TABLET) -----------
+    .navigation-wrapper {
+      background-color: $primary;
+    }
+    header .logo a .logo-holder {
+      background-image: url("../img/icon/logo-white.svg");
+    }
+    // ----------- NAVIGATION STYLING (TABLET) END -----------
+  }
+
+  @include media("<tablet") {
+    // ----------- NAVIGATION STYLING (MOBILE) -----------
+    .navigation-wrapper {
+      background-color: $primary;
+    }
+    header .logo a .logo-holder {
+      background-image: url("../img/icon/logo-white.svg");
+    }
+    // ----------- NAVIGATION STYLING (MOBILE) END -----------
+  }
+}

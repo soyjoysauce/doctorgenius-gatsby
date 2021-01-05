@@ -1,0 +1,188 @@
+# Specify Brotli-encoded assets
+<Files *.js.br>
+    AddType "text/javascript" .br
+    AddEncoding br .br
+</Files>
+<Files *.css.br>
+    AddType "text/css" .br
+    AddEncoding br .br
+</Files>
+<Files *.svg.br>
+    AddType "image/svg+xml" .br
+    AddEncoding br .br
+</Files>
+<Files *.html.br>
+    AddType "text/html" .br
+    AddEncoding br .br
+</Files>
+ 
+# Specify gzip-encoded assets
+<Files *.js.gz>
+    AddType "text/javascript" .gz
+    AddEncoding gz .gz
+</Files>
+<Files *.css.gz>
+    AddType "text/css" .gz
+    AddEncoding gz .gz
+</Files>
+<Files *.svg.gz>
+    AddType "image/svg+xml" .gz
+    AddEncoding gz .gz
+</Files>
+<Files *.html.gz>
+    AddType "text/html" .gz
+    AddEncoding gz .gz
+</Files>
+
+RewriteEngine On
+
+# Serve pre-compressed Brotli assets
+RewriteCond %{HTTP:Accept-Encoding} br
+RewriteCond %{REQUEST_FILENAME}.br -f
+RewriteRule ^(.*)$ $1.br [L]
+ 
+# Serve pre-compressed gzip assets
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.*)$ $1.gz [L]
+
+# Redirect http traffic to https for the live site
+RewriteCond %{HTTP_HOST} ^doctorgenius\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://doctorgenius.com/$1 [R,L]
+RewriteCond %{HTTP_HOST} ^www.doctorgenius.com [NC]
+RewriteRule ^(.*)$ https://doctorgenius.com/$1 [L,R=301]
+
+
+# Redirect http traffic to https for the dev/QA site
+RewriteCond %{HTTP_HOST} ^doctorgenius\.dgd3v\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://doctorgenius.dgd3v.com/$1 [R,L]
+RewriteCond %{HTTP_HOST} ^www.doctorgenius.dgd3v.com [NC]
+RewriteRule ^(.*)$ https://doctorgenius.dgd3v.com/$1 [L,R=301]
+
+
+#Direct users to a 404 if attempting to visit the parent Clients page
+#RedirectMatch 404 ^/our-clients/?$
+
+
+# Ensure the Gatsby error pages are being used by the server
+ErrorDocument 500 /500/index.html
+ErrorDocument 404 /404/index.html
+
+
+# Old 301s from the WP doctorgenius.com
+#Redirect 301 /events/business-dentistry-2017-08-04/ /
+#Redirect 301 /events/ce/ /
+#Redirect 301 /events/google-partners-healthcare-marketing-091817/ /
+#Redirect 301 /events/google-partners-mobile-marketing-111517/ /
+#Redirect 301 /events/marketing-millennials-03152018/ /
+#Redirect 301 /events/webinar-04062018/ /
+Redirect 301 /privacy-policy/ /
+Redirect 301 /CDA/ /
+Redirect 301 /cda/ /
+
+
+#New 301s to support old content from WP dg.com
+#Redirect 302 /events /
+Redirect 301 /portal /
+Redirect 301 /thank-you /
+Redirect 301 /ce /
+Redirect 301 /category/digital-marketing /blog/digital-marketing
+Redirect 301 /category/practice-management /blog/practice-management
+Redirect 301 /category/genius-lab /blog/genius-lab
+Redirect 301 /category/popular /blog
+Redirect 301 /category/online-practice-marketing /blog
+Redirect 301 /category/doctorgenius /blog
+Redirect 301 /healthcare-marketing-presentation https://presentation.doctorgenius.com/healthcare-marketing-presentation/
+Redirect 301 /client-success-presentation https://presentation.doctorgenius.com/client-success-presentation
+Redirect 301 /the-study /blog
+Redirect 301 /tag /blog
+Redirect 301 /our-technology/ /marketing-solutions/our-technology
+Redirect 301 /terms-and-conditions /termsofservice
+Redirect 301 /the-study/page /blog
+
+#New 301s to support old blogs from WP dg.com
+Redirect 301 /top-7-tips-for-doctors-to-boost-their-online-reputation /blog/top-7-tips-for-doctors-to-boost-their-online-reputation
+Redirect 301 /practice-phone-etiquette-book-new-patients-earn-more-referrals /blog/practice-phone-etiquette-book-new-patients-earn-more-referrals
+Redirect 301 /googles-most-recent-medic-update-turns-online-healthcare-marketing-upside-down-but-doctor-genius-clients-are-still-thriving /blog/googles-most-recent-medic-update-turns-online-healthcare-marketing-upside-down-but-doctor-genius-clients-are-still-thriving
+Redirect 301 /doctor-genius-joins-over-500-exhibitors-at-the-cda-presents-the-art-and-science-of-dentistry /blog/doctor-genius-joins-over-500-exhibitors-at-the-cda-presents-the-art-and-science-of-dentistry
+Redirect 301 /reaching-out-to-families-in-need /blog/reaching-out-to-families-in-need
+Redirect 301 /doctor-genius-joins-over-500-exhibitors-at-the-cda-presents-the-art-and-science-of-dentistry-anaheim-2018 /blog/doctor-genius-joins-over-500-exhibitors-at-the-cda-presents-the-art-and-science-of-dentistry-anaheim-2018
+Redirect 301 /dont-todays-job-yesterdays-tools-part /blog/dont-todays-job-yesterdays-tools-part
+Redirect 301 /oh-places-theyll-go-potential-patients-online-journey /blog/oh-places-theyll-go-potential-patients-online-journey
+Redirect 301 /planes-trains-automobiles-laptops-cellphones-tablets /blog/planes-trains-automobiles-laptops-cellphones-tablets
+Redirect 301 /start-new-year-off-right-part-iii-quality-content-support-regular-basis /blog/start-new-year-off-right-part-iii-quality-content-support-regular-basis
+Redirect 301 /start-new-year-off-right-part-ii-constant-evolution /blog/start-new-year-off-right-part-ii-constant-evolution
+Redirect 301 /start-new-year-off-right-part-functioning-website-practice /blog/start-new-year-off-right-part-functioning-website-practice
+Redirect 301 /home-part-vi-location-location-location /blog/home-part-vi-location-location-location
+Redirect 301 /home-part-v-picture-can-say-thousand-words /blog/home-part-v-picture-can-say-thousand-words
+Redirect 301 /new-doctor-genius-video /blog/new-doctor-genius-video
+Redirect 301 /need-know-latest-rankbrain-update /blog/need-know-latest-rankbrain-update
+Redirect 301 /doctor-genius-opening-doorway-patients /blog/doctor-genius-opening-doorway-patients
+Redirect 301 /home-part-iv-effective-calls-action /blog/home-part-iv-effective-calls-action
+Redirect 301 /home-part-iii-every-website-needs-navigation-bar /blog/home-part-iii-every-website-needs-navigation-bar
+Redirect 301 /home-part-ii-presentation-key /blog/home-part-ii-presentation-key
+Redirect 301 /home-part-overview /blog/home-part-overview
+Redirect 301 /brick-brick-part-iv-maintaining-steady-stream-content /blog/brick-brick-part-iv-maintaining-steady-stream-content
+Redirect 301 /brick-brick-part-iii-ensure-effective-efficient-educational-content-website /blog/brick-brick-part-iii-ensure-effective-efficient-educational-content-website
+Redirect 301 /brick-brick-part-ii-necessary-tools-conversion-setup-social-media /blog/brick-brick-part-ii-necessary-tools-conversion-setup-social-media
+Redirect 301 /brick-brick-part-website-built-strong-start /blog/brick-brick-part-website-built-strong-start
+Redirect 301 /game-cat-mouse-googles-new-algorithm-update /blog/game-cat-mouse-googles-new-algorithm-update
+Redirect 301 /bringing-patients-door-increasing-click-rate /blog/bringing-patients-door-increasing-click-rate
+Redirect 301 /bring-patients-school-bell-rings /blog/bring-patients-school-bell-rings
+Redirect 301 /http-help-googles-rules-changing-oh-many-ways /blog/http-help-googles-rules-changing-oh-many-ways
+Redirect 301 /social-media-management-keeping-joneses /blog/social-media-management-keeping-joneses
+Redirect 301 /core-successful-online-marketing-mobile-first-websites /blog/core-successful-online-marketing-mobile-first-websites
+Redirect 301 /online-quality-content-tmi-effect /blog/online-quality-content-tmi-effect
+Redirect 301 /key-prosperous-practiceare-using-effective-keywords /blog/key-prosperous-practiceare-using-effective-keywords
+Redirect 301 /business-dentistry-perfect-practice-prevent-plaque /blog/business-dentistry-perfect-practice-prevent-plaque
+Redirect 301 /class-session-communicating-search-engines /blog/class-session-communicating-search-engines
+Redirect 301 /website-building-abcnot-easy-1-2-3 /blog/website-building-abcnot-easy-1-2-3
+Redirect 301 /ready-wave-summer-patients /blog/ready-wave-summer-patients
+Redirect 301 /presenting-practice-facts-notecards /blog/presenting-practice-facts-notecards
+Redirect 301 /call-tracking-proven-results /blog/call-tracking-proven-results
+Redirect 301 /strong-support-custom-content-constant-communication /blog/strong-support-custom-content-constant-communication
+Redirect 301 /powerofthehashtag /blog/powerofthehashtag
+Redirect 301 /get-patients-involved-care /blog/get-patients-involved-care
+Redirect 301 /common-tech-problem-dentists /blog/common-tech-problem-dentists
+Redirect 301 /cda-event-opportunity-innovation-community-one-place /blog/cda-event-opportunity-innovation-community-one-place
+Redirect 301 /cda-weekend-art-science-dentistry /blog/cda-weekend-art-science-dentistry
+Redirect 301 /diy-self-straightening-options-versus-professional-care /blog/diy-self-straightening-options-versus-professional-care
+Redirect 301 /understanding-needs-patients /blog/understanding-needs-patients
+Redirect 301 /steps-drive-patients-practice-google-maps-marketing /blog/steps-drive-patients-practice-google-maps-marketing
+Redirect 301 /live-laugh-smile-build-positive-experience-patients /blog/live-laugh-smile-build-positive-experience-patients
+Redirect 301 /business-dentistry-start-practice /blog/business-dentistry-start-practice
+Redirect 301 /march-event-retain-new-patients-practice /blog/march-event-retain-new-patients-practice
+Redirect 301 /just-magic-seo-services-doctor-genius /blog/just-magic-seo-services-doctor-genius
+Redirect 301 /how-to-build-trust-with-patients /blog/how-to-build-trust-with-patients
+Redirect 301 /benefits-of-sharing-patient-reviews-online /blog/benefits-of-sharing-patient-reviews-online
+Redirect 301 /solving-problems-for-patients /blog/solving-problems-for-patients
+Redirect 301 /helpful-hints-on-the-ever-changing-digital-marketing-landscape /blog/helpful-hints-on-the-ever-changing-digital-marketing-landscape
+Redirect 301 /getting-your-patients-through-the-door-a-recall-system-that-actually-works /blog/getting-your-patients-through-the-door-a-recall-system-that-actually-works
+Redirect 301 /doctor-genius-enhanced-portal-review-webinar /blog/doctor-genius-enhanced-portal-review-webinar
+Redirect 301 /the-doctors-guide-for-marketing-to-millennials /blog/the-doctors-guide-for-marketing-to-millennials
+Redirect 301 /welcome-to-the-study /blog/welcome-to-the-study
+Redirect 301 /social-media-power-tips-for-dentists /blog/social-media-power-tips-for-dentists
+Redirect 301 /local-searches-are-on-the-rise-2 /blog/local-searches-are-on-the-rise-2
+Redirect 301 /local-searches-are-on-the-rise /blog/local-searches-are-on-the-rise
+Redirect 301 /what-you-should-know-about-call-tracking-and-seo /blog/what-you-should-know-about-call-tracking-and-seo
+Redirect 301 /a-blog-is-the-heartbeat-of-a-company-website /blog/a-blog-is-the-heartbeat-of-a-company-website
+Redirect 301 /learn-the-basic-components-of-seo /blog/learn-the-basic-components-of-seo
+
+<IfModule mod_headers.c>
+  Header set Connection keep-alive
+  <Filesmatch "\.(html|json)">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </Filesmatch>
+  <Filesmatch "\.(jpg|png|svg|css)">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </Filesmatch>
+  #Match any.js file that is not sw.js
+  <Filesmatch "^(?!sw).*\.js$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </Filesmatch>
+  <Filesmatch "sw.js">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </Filesmatch>
+</IfModule>

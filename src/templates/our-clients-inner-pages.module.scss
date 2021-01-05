@@ -1,0 +1,266 @@
+@import "../styles/_site-variables.scss";
+
+.ourClientsInnerPage {
+  .thinHeading {
+    padding-left: 20%;
+    padding-right: 20%;
+    @include media("<laptop") {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+  .imgCol[class*="col-"] {
+    @include media("<laptop") {
+      padding: 0;
+    }
+  }
+  .innerTitle {
+    .subtitle {
+      font-size: 29px;
+    }
+  }
+  .contentBlock {
+    .accentedParagraph {
+      p {
+        margin-bottom: 2rem;
+      }
+      .linkWithIconInContent {
+        color: $primary;
+        font-size: $font-size-base;
+        font-weight: $font-weight-semibold;
+        display: block;
+        margin-top: 40px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .caseStudyContainer {
+    h3 {
+      font-size: $h2-font-size-main;
+      @include fluid-type(21px, 45px, $tablet, $laptop);
+    }
+    > div {
+      margin-bottom: 0;
+    }
+    .subtitle {
+      @include fluid-type(8px, 27px, $tablet, $laptop);
+    }
+    .callout {
+      font-size: 2.5rem; /* 40px */
+      @include fluid-type(16px, 35px, $tablet, $laptop);
+      @include media("<tablet") {
+        min-width: 50%;
+      }
+    }
+    p:not(.callout) {
+      font-size: calc(9px + 6 * (100vw - 375px) / 616);
+    }
+    .iconWrapper {
+      height: 67px;
+      width: 103px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .imgIcon {
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+    .caseStudyTable {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: repeat(3, 100px);
+      @include media("<laptop") {
+        grid-template-rows: repeat(3, 75px);
+      }
+    }
+    .padMd {
+      @include media("<laptop") {
+        padding: 10px;
+      }
+    }
+    .caseStudyItem {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      @include media("<laptop") {
+        height: 75px;
+        padding: 10px;
+      }
+
+      /* There has to be a better way to do these css grid inline borders */
+      &:nth-child(odd) {
+        border-right: 1px solid #dfdfdf;
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        border-bottom: 1px solid #dfdfdf;
+      }
+    }
+    .caseStudyItem {
+      p:not(.callout) {
+        font-family: Roboto;
+        flex-basis: 150px;
+        margin: 0;
+        padding: 0;
+        @include fluid-type(
+          9px,
+          15px,
+          $phone,
+          $laptop
+        ); /* desktop - 53, tablet - 45, small - 38 */
+      }
+    }
+    .caseStudyItem {
+      .callout {
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        flex-basis: 150px;
+        letter-spacing: -0.12rem;
+        margin-right: 10px;
+        /* inherit this from somewhere else */
+        color: $primary;
+        font-weight: bold;
+        font-family: $font-family-inner-block-headings;
+        @include media("<laptop") {
+          letter-spacing: 0rem;
+          flex-basis: initial;
+        }
+      }
+    }
+  }
+  .checkPlansBackgroundImage {
+    height: 475px;
+    background-position: 40%;
+    @include media("<tablet") {
+      background-position: 48%;
+    }
+  }
+
+  .innerTitle {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: $pad;
+    h2 {
+      font-weight: $font-weight-medium;
+      font-size: $h2-font-size-content-block;
+      line-height: 1;
+      /*@include fluid-type(
+        20px,
+        $h2-font-size-content-block,
+        $phone,
+        $tablet
+      ); //; /* See if this is really necessary conflicts with the h2 size below */ //font-size: $h2-font-size-main;
+      @include media("<tablet") {
+        font-weight: $font-weight-semibold;
+        font-size: 20px;
+      }
+      margin-bottom: 0;
+      span {
+        font-weight: $font-weight-light;
+      }
+    }
+    h2.underline {
+      &.short:after {
+        margin-top: 25px;
+      }
+      &.tall:after {
+        margin-top: 42px;
+      }
+      &:not(.short):after {
+        margin-top: 32px;
+      }
+      &:after {
+        background-image: url("../img/underline.svg");
+        content: "";
+        display: block;
+        height: 2px;
+        background-repeat: no-repeat;
+        width: 232px;
+        margin: auto;
+      }
+    }
+
+    h3 {
+      line-height: 1;
+    }
+    a {
+      cursor: pointer;
+    }
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  .strapline {
+    font-size: $h3-font-size;
+    color: $primary;
+    font-weight: $font-weight-semibold;
+  }
+
+  #caseStudyHeader {
+    // font-size: 45px;
+    font-weight: $font-weight-bold;
+    @include fluid-type(20px, 45px, $phone, $desktop);
+    @include media("<=tablet") {
+      font-size: 21px;
+    }
+  }
+
+  b {
+    font-weight: $font-weight-semibold;
+  }
+
+  .linkWithIcon {
+    color: $primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+
+  .linkIcon {
+    margin-right: 10px;
+  }
+
+  .spacer {
+    height: 2px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    &.trim {
+      width: 90%;
+      margin-right: 5%; /* needs tweaking */
+      margin-left: 5%; /* needs tweaking */
+    }
+    &.solid {
+      background: $mute;
+      opacity: 0.25;
+    }
+    &.small {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .imgResponsive {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    width: 115%;
+    transform: translateX(-6%);
+    @include media("<laptop") {
+      width: 100%;
+      transform: translateX(0%);
+    }
+  }
+}

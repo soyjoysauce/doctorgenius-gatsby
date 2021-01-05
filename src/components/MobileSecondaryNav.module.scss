@@ -1,0 +1,94 @@
+@import "../styles/_site-variables.scss";
+
+$secondaryLineItemHeight: 54px;
+$innerItemBackgroundColor: #0082ce;
+$borderColor: #068ad8;
+
+.mobileSecondaryNavHolder {
+  margin-right: -25px !important;
+  margin-left: -25px !important;
+}
+
+.mobileSecondaryNav {
+  position: relative;
+  height: $secondaryLineItemHeight;
+  padding: 0 !important;
+  color: $primary-text;
+
+  .downArrowContainer {
+    float: right;
+    line-height: $secondaryLineItemHeight - 2px;
+    padding: 0 20px;
+
+    img {
+      transition: transform 0.5s;
+      &.flipped {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  li {
+    height: $secondaryLineItemHeight;
+    display: block;
+    width: 100%;
+    background-color: $innerItemBackgroundColor;
+    padding-left: 27px;
+    padding-right: 7px;
+    line-height: $secondaryLineItemHeight - 2px;
+    font-family: $font-family-body-text;
+
+    a {
+      color: $primary-text;
+      vertical-align: center;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+  }
+}
+
+.mobileSecondaryNavDropdown {
+  position: absolute;
+  display: block;
+  width: 100%;
+  z-index: 999; //bring this above other elements on the screen
+  height: $secondaryLineItemHeight;
+  .currentSecondaryNavLink {
+    background-color: $secondary;
+    border: none;
+    font-size: 16px;
+  }
+  .innerSecondaryNavLinks {
+    height: 0;
+    max-height: 0;
+    transition: max-height 0.6s ease-in;
+    overflow: hidden;
+    li {
+      display: none;
+      border: $borderColor solid 1px;
+      font-size: 15px;
+      font-weight: $font-weight-light;
+      a,
+      a:hover,
+      a:active,
+      a:visited,
+      a:focus {
+        text-decoration: none;
+      }
+    }
+    &.open {
+      height: auto;
+      max-height: 378px;
+      li {
+        display: block;
+      }
+    }
+  }
+
+  &.mobileSubNavStuck {
+    position: fixed;
+    top: 65px;
+  }
+}

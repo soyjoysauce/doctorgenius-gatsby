@@ -1,0 +1,132 @@
+@import "../styles/_site-variables.scss";
+
+.innerTitle {
+  text-align: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  h2 {
+    line-height: 1;
+    @include fluid-type(
+      $h2-font-size-main * 0.65,
+      $h2-font-size-main,
+      $phone,
+      $tablet
+    ); //font-size: $h2-font-size-main;
+    font-weight: $font-weight-medium;
+  }
+
+  h2.underline {
+    &.short:after {
+      margin-top: 25px;
+    }
+    &.tall:after {
+      margin-top: 42px;
+    }
+    &:not(.short):after {
+      margin-top: 32px;
+    }
+    &:after {
+      background-image: url("../img/underline.svg");
+      content: "";
+      display: block;
+      height: 2px;
+      background-repeat: no-repeat;
+      width: 232px;
+      margin: auto;
+    }
+  }
+  h3 {
+    line-height: 1;
+  }
+  a {
+    cursor: pointer;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.strapline {
+  font-size: $h3-font-size;
+  color: $primary;
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+}
+
+.subtitleMuted {
+  color: $mute-text;
+  margin-top: 0;
+  @include fluid-type(14px, 35px, $phone, $laptop);
+}
+
+.contentBlockInnerTitle {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: $pad;
+  h2 {
+    font-weight: $font-weight-medium;
+    font-size: $h2-font-size-content-block;
+    line-height: 1;
+    /*@include fluid-type(
+        20px,
+        $h2-font-size-content-block,
+        $phone,
+        $tablet
+      ); //; /* See if this is really necessary conflicts with the h2 size below */ //font-size: $h2-font-size-main;
+    @include media("<tablet") {
+      font-weight: $font-weight-semibold;
+      font-size: 20px;
+    }
+    margin-bottom: 0;
+    span {
+      font-weight: $font-weight-light;
+    }
+  }
+  h2.underline {
+    &.short:after {
+      margin-top: 25px;
+    }
+    &.tall:after {
+      margin-top: 42px;
+    }
+    &:not(.short):after {
+      margin-top: 32px;
+    }
+    &:after {
+      background-image: url("../img/underline.svg");
+      content: "";
+      display: block;
+      height: 2px;
+      background-repeat: no-repeat;
+      width: 232px;
+      margin: auto;
+    }
+  }
+}
+
+.boldText {
+  font-weight: 600;
+}
+
+.smallText {
+  font-size: 25.5px !important;
+}
+
+.contentBlockInnerTitleWithBold {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  h2 {
+    font-size: 46px;
+    font-weight: $font-weight-light;
+    line-height: 1;
+    margin-bottom: 0;
+    @include media("<=tablet") {
+      font-size: 26px;
+    }
+    span {
+      font-weight: $font-weight-semibold;
+    }
+  }
+}

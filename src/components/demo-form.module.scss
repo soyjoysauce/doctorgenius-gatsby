@@ -1,0 +1,125 @@
+@import "../styles/_site-variables.scss";
+
+.formWrapper {
+  input,
+  button[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    &:hover {
+      background-color: $button-hover-green;
+    }
+  }
+  input {
+    &::placeholder {
+      color: #a4a4a4;
+    }
+    &[type="text"],
+    &[type="email"],
+    &[type="phone"] {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: $font-weight-light;
+      height: 45px;
+      background: #f5f5f5;
+      border: none;
+      border-radius: 4px;
+      text-indent: 20px;
+    }
+  }
+  button[type="submit"] {
+    height: 45px;
+    width: 175px;
+    margin: 30px auto;
+    font-weight: $font-weight-semibold;
+    font-size: 15px;
+    background: $demo-button-green;
+    color: white;
+    box-shadow: none;
+  }
+  .ldsEllipsis {
+    display: inline-block;
+  }
+  .ldsEllipsis div {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #cef;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+
+  /* Common to both contact forms: */
+  .ldsEllipsis {
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  .ldsEllipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .ldsEllipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .ldsEllipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .ldsEllipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
+  }
+
+  .button {
+    color: #fff;
+    background-color: $primary;
+    text-align: center;
+    font-size: $font-size-btn;
+    transition: 0.4s background-color;
+    &.flat {
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      &.transparent {
+        border: 1px solid;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  .button:hover {
+    text-decoration: none;
+    color: $primary-text;
+    background-color: $button-hover-green;
+  }
+}

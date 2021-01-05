@@ -1,0 +1,83 @@
+@import "../styles/_site-variables.scss";
+
+.marketingSolutionsPage {
+  /* Styles unique to this page component */
+
+  .checkPlansBackgroundImage {
+    height: 475px;
+    background-position: 40%;
+    @include media("<laptop") {
+      background-position: 45%;
+    }
+  }
+
+  .lighthouseImage {
+    width: 110%;
+    max-width: 110%;
+    margin: auto;
+    display: block;
+    @include media("<laptop") {
+      width: 100%;
+    }
+  }
+
+  .portalDashboard {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+  }
+
+  .toolsYouNeed {
+    @include media("<laptop") {
+      margin: 20px auto;
+    }
+  }
+
+  .fullBleedContent {
+    @include media(">phone", "<=tablet") {
+      padding-right: 25px;
+      padding-left: 25px;
+    }
+  }
+
+  .panelRow {
+    align-items: flex-start;
+  }
+
+  .linkWithIcon {
+    color: $primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    display: block;
+    margin-top: 40px;
+    text-decoration: none;
+  }
+
+  .linkIcon {
+    margin-right: 10px;
+  }
+
+  /*
+  * Some images from the deisgn have a blurred shadow/background
+  * which makes the actual width larger than the dimensions appear.
+  * This lets them bleed slightly out of their column space to
+  * accomodate. 125% is a just a rough guess
+  */
+  .oddRow {
+    .blurBleed {
+      //transform: translateX(-12.5%);
+      transform: translateX(-6%);
+      @include media("<laptop") {
+        transform: translateX(0%);
+      }
+    }
+  }
+  .evenRow {
+    .blurBleed {
+      transform: translateX(6%);
+      @include media("<laptop") {
+        transform: translateX(0%);
+      }
+    }
+  }
+}

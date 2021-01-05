@@ -1,0 +1,32 @@
+@import "../styles/_site-variables.scss";
+
+.container {
+  @include media(">=desktop") {
+    max-width: 1248px;
+    padding-right: 37.5px;
+    padding-left: 37.5px;
+  }
+}
+
+.container,
+.containerFluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include media("<=phone") {
+    padding-right: $gutter-xs / 2;
+    padding-left: $gutter-xs / 2;
+  }
+  @include media(">phone", "<=tablet") {
+    padding-right: $gutter-sm / 2;
+    padding-left: $gutter-sm / 2;
+  }
+  @include media(">tablet", "<=laptop") {
+    padding-right: $gutter-md / 2;
+    padding-left: $gutter-md / 2;
+  }
+  @include media(">laptop", "<=desktop") {
+    padding-right: $gutter-lg / 2;
+    padding-left: $gutter-lg / 2;
+  }
+}
